@@ -1,6 +1,6 @@
 import time
 import numpy as np
-def seed():
+def seed_time():
     t = time.localtime(time.time())
     return t.tm_year-2000 + 70*(t.tm_mon+12*(t.tm_mday+31*(t.tm_hour+23*(t.tm_min+59*t.tm_sec))))
 

@@ -2,12 +2,12 @@
 
 对一维随机变量，设 $\xi$是[0, 1]上的均匀分布，对x的分布函数 $p(x)$满足
 $$
-p'(x)=a\var(x)+b\exp(-cx),x\in[-1,1],a\neq0\\
+p'(x)=a\delta(x)+b\exp(-cx),x\in[-1,1],a\neq0\\
 p(x) = \int_{-\infin}^x p'(t)dt
 $$
 ​                                                                                            
 
-由于 $\var(x)$积分后得到的 阶梯函数$H(x)$在x=0处不连续，所以对p(x)分段处理
+由于 $\delta(x)$积分后得到的 阶梯函数$H(x)$在x=0处不连续，所以对p(x)分段处理
 $$
 p(x)=\left\{
 \begin{aligned}
@@ -31,11 +31,11 @@ $$
    $$
 
 4. $$
-   p(1)=a+b/c*(\exp c-\exp{\frac{1}{c}})\ge0
+   p(1)=a+b/c*(\exp c-\exp{(-c)})\ge0
    $$
 
 5. $$
-   P(x)=\int p(x)dx=(\int^{0}_{-1}+\int^1_0) p(x)dx=a+\frac{2b(c\exp c-\sinh{c})}{c^2}=1
+   P(x)=\int vp(x)dx=(\int^{0}_{-1}+\int^1_0) p(x)dx=a+\frac{2b(c\exp c-\sinh{c})}{c^2}=1
    $$
 
 由上面的条件可得，一个关于a,b,c的**充分条件**
@@ -43,17 +43,18 @@ $$
 a = 1- \frac{2b}{c}e^c+\frac{2b}{c^2}\sinh c\\
 b>0\\
 c>0\\
+1-\frac{b}{c}(1+\exp{c})+\frac{2b}{c^2}\sinh c\ge0\\
 1-\frac{2b}{c}(\cosh c)+\frac{2b}{c^2}\sinh c\ge0
 $$
 可以取 
 $$
-b=1,c=0.5,a=1-\frac{2b\exp{(-c)}}{c}\approx-1.42612
+b=0.5,c=0.5,a=1-\frac{2b\exp{(-c)}}{c}\approx-0.213061
 $$
 
 
 考虑到p(x)的不连续性，所以无法写出累积函数的解析表达式，我们采取舍选法：
 
-1. 设p(x)在$[-1，0)$上界$M_1=1.14$；$[0，1]$上界$M_2=0.6$
+1. 设p(x)在$[-1，0)$上界$p(0-)<M_1=0.65$；$[0，1]$上界$p(1)<M_2=0.83$
 
 2. 随机选择两个在[0，1]之间均匀分布的随机抽样 $(\xi_1,\xi_2)$
 

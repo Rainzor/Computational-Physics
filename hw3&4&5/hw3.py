@@ -1,15 +1,16 @@
+import imp
 from Schrage_16807 import*
 import pandas as pd
 import matplotlib.pyplot as plt
 from mpl_toolkits import mplot3d
-
+import numpy as nps
 
 if __name__ == "__main__":
-    seed = seed();
+    seed = seed_time();
     r = Schrage_16807(seed= seed)
     a = [r.rand(dim =2) for item in range(5000)]
     a = np.asarray(a)
-    # a = np.random.randn(10000,2)
+    # a = np.random.rand(10000,2)
     df = pd.DataFrame(columns=['theta','phi'])
     df['theta'] = np.arccos(a[:,0]*2-1)
     df['phi'] = a[:,1]*2*np.pi
