@@ -5,7 +5,7 @@
 from operator import ge
 from queue import Queue 
 import numpy as np
-from hw1 import Schrage
+from hw1 import Schrage_16807
 
 def decision(list):
     if list[0]>list[2] and list[2]>list[1]:
@@ -13,14 +13,15 @@ def decision(list):
     else:
         return 0
 
-class Fibonacci(object):
+
+class LaggedFibonacci(object):
     def __init__(self,seed=42):
         self.__seed = seed
         self.__M = int(2**32-5)
         self.__numberQueue= self.__make_number43()
     
     def __make_number43(self):
-        s = Schrage(self.__seed);
+        s = Schrage_16807(self.__seed);
         q1 = Queue(maxsize=21)
         q2 = Queue(maxsize=22)
         #使用16807随机生成前43个数
@@ -44,8 +45,8 @@ class Fibonacci(object):
 
 if __name__ == "__main__":
     N = 50002
-    schrage_16807 = Schrage(seed=42)
-    fibonacci = Fibonacci(seed= 42)
+    schrage_16807 = Schrage_16807(seed=42)
+    fibonacci = LaggedFibonacci(seed=42)
 
     data_16807 = [schrage_16807.rand() for i in range(N)]
     data_fib = [fibonacci.rand() for i in range(N)]

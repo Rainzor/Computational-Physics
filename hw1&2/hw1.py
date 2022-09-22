@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 #Schrahe 16807类
 #随机输入初始值，反复调用rand(),得到随机数列
-class Schrage(object):
+class Schrage_16807(object):
     def __init__(self,seed = 42):
         self.__seed = seed
         self.__M = 2147483647
@@ -67,7 +67,7 @@ def makefile(data,filename):
 
 
 if __name__ == "__main__":
-    test = Schrage(seed = 42)
+    test = Schrage_16807(seed = 42)
     
     data = [test.rand() for i in range(100000)]
     print(data[:90]) 
