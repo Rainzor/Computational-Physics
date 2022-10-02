@@ -23,7 +23,6 @@ class Schrage16807(object):
         else:
             return i_next
 
-
     def __rand_list(self,dim=1):
         if dim == 1:#返回一个随机数
             self.__seed = self.__iter_rand(self.__seed)
