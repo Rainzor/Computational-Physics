@@ -2,11 +2,10 @@
 #Runze Wang
 #PB20020480
 
-from cProfile import label
-from cgitb import reset
 from Schrage_16807 import*
 import numpy as np
 import matplotlib.pyplot as plt
+import pandas as pd
 
 #概率分布函数 Probability density function.
 def pdf(x):
@@ -53,7 +52,7 @@ if __name__=='__main__':
     xi[:,1] = r.rand(N,1)
     #print(xi[:30,0])d
 
-    fig, ax = plt.subplots()
+ 
 
     #舍选法
     result = [d[0] for d in xi if rejection_method(d)]
@@ -63,6 +62,7 @@ if __name__=='__main__':
     df.to_csv("data_04.csv")
 
     #绘制直方图与概率密度分布图像
+    fig, ax = plt.subplots()
     num_bins = 100
     #the histogram of the data
     n, bins, patches = ax.hist(result, num_bins, density=True,label='histogram of data')
