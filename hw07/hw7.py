@@ -62,11 +62,11 @@ class MyDistribution(object):
     def pdf(self,x):
         """Probability density function.
 
-            Args:
-			x(float): a random variable.
-			
-		Returns:
-		    p_x(float): the probility density of x
+            Parameters:
+                x(float): a random variable.
+
+            Returns:
+                p_x(float): the probility density of x
         """
         data_x = self.p_data[:,0]
         x_min = data_x[0]
@@ -81,7 +81,7 @@ class MyDistribution(object):
     def cdf(self, x):
         """Cumulative density function.
 
-            Args:
+            Parameters:
 			x(float): a random variable.
 			
 		Returns:
@@ -103,7 +103,7 @@ class MyDistribution(object):
     def ppf(self, p):
         """Percent point function (inverse of cdf — percentiles).
 
-            Args:
+            Parameters:
 			p(float): the probility in cumulative density function
 
             Returns:
@@ -129,7 +129,7 @@ class MyDistribution(object):
     def rvs_direct(self,size=1):
         """Random variates using direct sampling method
 
-            Args:
+            Parameters:
             size(int): the size of random variates as np.array format 
 
             Return:
@@ -146,7 +146,7 @@ class MyDistribution(object):
     def rvs_select(self,size=1):
         """Random variates using selection sampling method
 
-            Args:
+            Parameters:
             size(int): the size of random variates as np.array format 
 
             Return:
