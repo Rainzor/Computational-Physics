@@ -54,7 +54,8 @@ class Schrage16807(object):
                         return temp.T #返回列向量
                     else:
                         temp = [self.__rand_list(d1) for item in range(d0)]
-                        return np.array(temp)      #返回d0*d1的随机数矩阵 
+                        a = np.array(temp)      
+                        return a.reshape((d0,d1))#返回d0*d1的随机数矩阵 
         return print("Error, please input a positive integer!\n")
         
 def makefile(data,filename):
