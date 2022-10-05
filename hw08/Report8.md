@@ -7,10 +7,13 @@
 ### 1 Question
 
 用 Monte Carlo 方法计算如下定积分，并讨论有效数字位数。
-$$ {aligned}
+$$ 
+\begin{aligned}
 I_1 =\int f_1(x)dx =\int_0^5dx\sqrt{x^2+2\sqrt x}\\
 I_2=\int f_2(x,y,z,u,v)dxdydzdudv=\int_0^{7/10}dx\int_0^{4/7}dy\int_0^{9/10}dz\int_0^2du\int_0^{13/11}dv(5+x^2-y^2+3xy-z^2+u^3-v^3)
-$$ {aligend}
+\end{aligned}
+
+$$ 
 
 
 
