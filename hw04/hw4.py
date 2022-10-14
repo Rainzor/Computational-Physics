@@ -39,6 +39,7 @@ if __name__=='__main__':
     seed = seed_time()
     r = Schrage16807(seed)
     xi = np.zeros((N,2))
+    xi= r.rand(N,2);
     #生成二维均匀随机变量
 
     #按比例抽样
