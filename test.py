@@ -1,34 +1,31 @@
-# from myStats import norm,binom,bernulli,expon,poisson,Cos
-# import numpy as np
-# import matplotlib.pyplot as plt
-# import pandas as pd
+from math import erf
+import numpy as np
+import matplotlib.pyplot as plt
+from sympy import erfinv
 
-# df = pd.read_csv("data_09.csv")
-
-# if __name__=="__main__":
-#     N =10000
-#     n = Cos()
-#     r = n.rvs(N)
-#  #绘制直方图与概率密度分布图像
-#     num_bins =50
-
-
-#     #绘制直接抽样法得到的图像
-#     fig, ax = plt.subplots()
-
-#     #the histogram of the data
-#     ax.hist(r, bins =num_bins, density=True, histtype='stepfilled', alpha=0.5,range=(-2,2))
-    
-#     x = np.linspace(n.ppf(0.001), n.ppf(0.999), 100)
-#     ax.plot(x, n.pdf(x),'r-', lw=5, alpha=0.6, label="Best fit")
-#     # add a 'best fit' line
-#     ax.set_xlabel('x')
-#     ax.set_ylabel('Probability density')
-
-#     # Tweak spacing to prevent clipping of ylabel
-#     ax.legend(loc='best', frameon=False)
-#     fig.tight_layout()
-#     plt.show()
+from Schrage_16807 import Schrage16807
+from Schrage_16807 import seed_time
+#make random data of size, using 16807 method to generate random numbers and seed need to using time
+def make_data(size):
+    schrage = Schrage16807(seed_time())
+    data = np.zeros(size)
+    for i in range(size):
+        data[i] = schrage.rand()
+    return data
 
 
-
+#a class make the gaussian distribution of the random data
+class norm(object):
+    def __init__(self, mu, sigma):
+        self.mu = mu
+        self.sigma = sigma
+    def __call__(self, x):
+        return np.exp(-(x - self.mu)**2/(2*self.sigma**2))
+    def rvs(self, size):
+        return np.random.randn(size)*self.sigma + self.mu
+    def pdf(self, x):
+        return np.exp(-(x - self.mu)**2/(2*self.sigma**2))
+    def ppf(self,x):
+        return self.mu + self.sigma*np.sqrt(2)*erfinv(2*x - 1)
+    def cdf(self,x):
+        return (1 + np.sign(x - self.mu)*erf(np.abs(x - self.mu)/np.sqrt(2)/self.sigma))/2
