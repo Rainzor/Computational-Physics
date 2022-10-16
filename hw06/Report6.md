@@ -25,6 +25,7 @@ $$
 <img src="F:\MyDocuments\Physics\Compututation Physics\Homework\hw06\Compare.png" style="zoom:50%;" />
 <center><p> 图1：比较函数与待抽样函数
 
+
 可以找到$F(x)>p(x)$始终成立，取Gauss分布为 $p(x)$，而Lorentz分布为 $F(x)$
 
 #### 2.2 抽样比较函数F(x)
@@ -32,9 +33,6 @@ $$
 ​	为了抽样关于 $F(x)$的分布函数，取 $\xi$为 $(-1,1)$的均匀分布函数
 $$
 \begin{aligned}
-    \xi=& \frac{\int^x_{-\infin}F(t)dt}{\int^{+\infin}_{-\infin}F(t)dt}=\int^x_{-\infin}f(t)dt\\
-    =&0.31831 \left(0.5\tan ^{-1}(x+1))-0.5 \tan ^{-1}(1 -x)+0.25 \log \left(x^2+2x+2\right)-0.25 \log \left(-x^2+2x-2\right)\right)\\
-    \end{aligned}\begin{aligned}
     \xi=& \frac{\int^x_{-\infin}F(t)dt}{\int^{+\infin}_{-\infin}F(t)dt}=\int^x_{-\infin}f(t)dt\\
     =&0.31831 \left(0.5\tan ^{-1}(x+1))-0.5 \tan ^{-1}(1 -x)+0.25 \log \left(x^2+2x+2\right)-0.25 \log \left(-x^2+2x-2\right)\right)\\
     \end{aligned}
@@ -86,7 +84,10 @@ $$
 <img src="F:\MyDocuments\Physics\Compututation Physics\Homework\hw06\直方图.png" style="zoom:50%;" />
 
 <center><p> 图2：抽样直方图与正态分布比较
-可见归一化直方统计结果与正态分布密度函数拟合得十分的好。
+
+**可见归一化直方统计结果与正态分布密度函数拟合得十分的好。**
+
+
 
 #### 3.2 抽样效率
 
