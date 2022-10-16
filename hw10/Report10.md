@@ -180,9 +180,10 @@ B\sin(wt)=\sin(2\pi t)
 $$
 
 <center class="half">
-    <img src="F:\MyDocuments\Physics\Compututation Physics\Homework\hw10\random_walk2.png" width="300"/>
-    <img src="F:\MyDocuments\Physics\Compututation Physics\Homework\hw10\covariance_v2.png" width="300"/>
+    <img src="F:\MyDocuments\Physics\Compututation Physics\Homework\hw10\random_walk2.png" width="200"/>
+    <img src="F:\MyDocuments\Physics\Compututation Physics\Homework\hw10\covariance_v2.png" width="200"/>
 </center>
+
 
 ​	由图像可见，当加大随机力后，图像更加接近随机游走，局部有微笑的振动；而由于粘滞阻力的作用，粒子相关系数仍然会逐渐收敛到0，但由于实验模拟精度有限，右图像末端会有一些涨落，但整体趋势仍然符合理论。
 
