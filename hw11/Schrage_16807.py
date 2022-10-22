@@ -51,7 +51,7 @@ class Schrage16807(object):
                 elif isinstance(d1,int) and (d1>0):                   
                     if d1 == 1:
                         temp = self.__rand_list(d0)
-                        return temp.T #返回列向量
+                        return temp.T # type: ignore #返回列向量
                     else:
                         temp = [self.__rand_list(d1) for item in range(d0)]
                         a = np.array(temp)      
