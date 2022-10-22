@@ -1,4 +1,3 @@
-from cProfile import label
 from statistics import mean
 from matplotlib.lines import lineStyles
 from Schrage_16807 import*
@@ -8,7 +7,7 @@ import matplotlib.pyplot as plt
 
 def plot_brown(x):
     #绘制位移图像———加电场的布朗运动
-    plt.style.use('classic')
+    plt.style.use('classic')  # type: ignore
     fig, ax = plt.subplots()
 
     # #颜色的渐变
@@ -116,7 +115,7 @@ if __name__=="__main__":
     cov_v_sim = cov_v/n#模拟值
 
     #统计数据
-    c = cov_v_sim[0]
+    c = cov_v_sim[0]  # type: ignore
     cov_v_theory = cov_theory(t,c)#理论值
 
     # #保存数据
