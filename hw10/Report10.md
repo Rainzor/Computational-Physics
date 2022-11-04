@@ -148,7 +148,7 @@ cond(no)->sub1(right)->op
 
 <center><p>图1：在强电场中粒子随机游走
 得到如上图像
-**解释**：一开始速度比较大，而随机力比较小，所以随机游走不明显，呈直线行走状态，但是随着时间增长，由于阻力的效果导致粒子做衰减的简谐振动，同时Y方向仍然有一定的随机性。
+**解释**：一开始速度比较大，而随机力比较小，所以随机游走不明显，呈直线行走状态；但是随着时间增长，由于阻力的作用的效果，使得速度逐渐降下来，导致粒子做衰减的简谐振动，同时Y方向仍然有一定的随机性。
 
 #### 3.2 速度相关函数
 
@@ -162,12 +162,15 @@ C_2(t)=\frac12\left<\bold v(t)\cdot \bold v(0)\right>=\frac12\left<v_x(t)v_x(0)\
 $$
 实验与理论比较得下图
 
-<img src="F:\MyDocuments\Physics\Compututation Physics\Homework\hw10\covariance_v.png" style="zoom:67%;" />
+<img src="F:\MyDocuments\Physics\Compututation Physics\Homework\hw10\covariance_v.png" style="zoom: 50%;" />
 
 <center><p>图2：在强电场中，速度相关系数理论与模拟图像
 
 ​	图中尾处有一定的波动情况，这是由于初始速度平均值 $<\bold v(0)>$ 并不精准为0导致的。但在误差涨落允许范围内可以看到，图像的整体趋势实验模拟与理论吻合较好，即速度自相关函数确实为
 
+$$
+C(t)=\frac{\left< \bold v^2(0)\right>}2e^{-t/\tau}
+$$
 
 
 #### 3.3 调整随机力大小和粘滞阻力
@@ -179,13 +182,15 @@ A_{max}=10\\
 B\sin(wt)=\sin(2\pi t)
 $$
 
-<center class="half">
-    <img src="F:\MyDocuments\Physics\Compututation Physics\Homework\hw10\random_walk2.png" width="200"/>
-    <img src="F:\MyDocuments\Physics\Compututation Physics\Homework\hw10\covariance_v2.png" width="200"/>
-</center>
+<img src="F:\MyDocuments\Physics\Compututation Physics\Homework\hw10\random_walk2.png" style="zoom:50%;" />
+
+<img src="F:\MyDocuments\Physics\Compututation Physics\Homework\hw10\covariance_v2.png" style="zoom:50%;" />
 
 
-​	由图像可见，当加大随机力后，图像更加接近随机游走，局部有微笑的振动；而由于粘滞阻力的作用，粒子相关系数仍然会逐渐收敛到0，但由于实验模拟精度有限，右图像末端会有一些涨落，但整体趋势仍然符合理论。
+
+
+
+​	由图像可见，当加大随机力后，图像更加接近随机游走，局部有微小的振动；而由于粘滞阻力的作用，粒子相关系数仍然会逐渐收敛到0，但由于实验模拟精度有限，右图像末端会有一些涨落，但整体趋势仍然符合理论。
 
 
 

@@ -5,6 +5,9 @@ DBM_FAST.py: 调用了DBM.py，DBM_FAST继承了DBM类
 
 主要用到numpy、time、pandas、matplotlib包
 
+DLA.gif是DLA方法生成的动画
+DBM_FAST.gif是快速DBM法生成的动画
+
 压缩包中提供了测试集数据“DLA.csv”,“DBM.csv”,“DBM_FAST.csv”
 其中含有生长点的坐标
 

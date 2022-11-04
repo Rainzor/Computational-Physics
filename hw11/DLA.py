@@ -1,10 +1,10 @@
-from re import A
 from Schrage_16807 import*
 import pandas as pd
 from warnings import WarningMessage
 import numpy as np
 import matplotlib.pyplot as plt
 from abc import ABC, abstractmethod
+import matplotlib.animation as animation
 
 class Growth_Model(ABC):
     """Growth models can be imagined as having a seed.
@@ -71,9 +71,13 @@ class Growth_Model(ABC):
             y += 1
         return x,y
 
-    @abstractmethod
-    def add_particle(self):
+    def add_particle(self,x,y):
         #生长一个粒子
+        self._particles_set.add((x,y))
+
+    @abstractmethod
+    def update(self):
+        #更新内部状态
         pass
 
     @abstractmethod
@@ -84,7 +88,8 @@ class Growth_Model(ABC):
     @property
     def data(self):
         #返回数据
-        return zip(*self._particles_set)
+        x,y = zip(*self._particles_set)
+        return x,y
     
     def plot(self, **kwargs):
         #画图
@@ -100,6 +105,56 @@ class Growth_Model(ABC):
         plt.axis('square')
         plt.xticks([])
         plt.yticks([])
+        plt.show()
+
+    def plot_data(self, filename, **kwargs):
+        #读取数据
+        df = pd.read_csv(filename)
+        x = df['x']
+        y = df['y']
+        #画图
+        size = kwargs['size']
+        label = kwargs['label']
+        plt.style.use('dark_background')
+        plt.scatter(x, y, s=size, marker=',', color='white',
+                    edgecolors='none', label=label)
+        plt.title(filename)
+        plt.legend()
+        #隐藏坐标轴
+        plt.axis('square')
+        plt.xticks([])
+        plt.yticks([])
+        plt.show()
+
+    def plot_GIF(self,**kwargs):
+        """plot the GIF of the model
+
+        """
+        size = kwargs['size']
+        label = kwargs['label']
+
+        plt.style.use('dark_background')
+        plt.figure(figsize=(10, 10))
+        plt.ion()
+        while self.particle_number < self.max_num:
+            self.update()
+            self.particle_number+=1
+
+            plt.cla()
+            plt.title(self.model_name+" created by Rainzor")
+            x,y=zip(*self._particles_set)
+            plt.scatter(x, y, s=size, marker=',', color='white',
+                    edgecolors='none', label=label)
+            plt.legend()
+            #隐藏坐标轴
+            plt.axis('square')
+            plt.xticks([])
+            plt.yticks([])
+            plt.xlim(-self.N//2, self.N//2)
+            plt.ylim(-self.N//2, self.N//2)
+
+            plt.pause(0.01)
+        plt.ioff()
         plt.show()
 
 
@@ -226,7 +281,7 @@ class DLA(Growth_Model):
                 break
         return  x, y
 
-    def add_particle(self):
+    def update(self):
         """
         添加一个粒子的步骤如下：
 
@@ -240,26 +295,27 @@ class DLA(Growth_Model):
 
         5. 如果黏住，就将该点加入集合中,循环结束
         """
-        x,y = self.generate_point()
+        x, y = self.generate_point()
         while 1:
-            x,y = self.random_walk(x,y)
+            x, y = self.random_walk(x, y)
             if not self._check_boundery(x, y):  # 如果超出边界，就重新生成一个随机点
-                x,y = self.generate_point()
-            if self._check_around(x,y):
-                if self.r.rand()<self.stickness:#如果周围有点且黏住
-                    self._particles_set.add((x,y))
-                    self.particle_number += 1
+                x, y = self.generate_point()
+            if self._check_around(x, y):
+                if self.r.rand() < self.stickness:  # 如果周围有点且黏住
+                    self.add_particle(x, y)
                     if x**2+y**2 > self.radius**2:
                         self.radius = np.sqrt(x**2+y**2)
-                    break
+                    return x,y
+
 
     def run(self):
         """Run the DLA model
-        代码主体内容在add_particle函数中
+        代码主体内容在update函数中
         """
         while self.particle_number < self.max_num:
             print("Particle number: ", self.particle_number)
-            self.add_particle()
+            self.update()
+            self.particle_number += 1
 
     #def data(self):
 
@@ -269,12 +325,43 @@ class DLA(Growth_Model):
 
 
 if __name__=="__main__":
-    dla = DLA(N=200,stickness=1,max_num=500)
-    time_start = time.time()
-    dla.run()
-    time_end=time.time()
-    min = (time_end-time_start)//60
-    sec = (time_end-time_start)%60
-    print('DLA {} points time cost: {}min, {}sec'.format(dla.max_num,min,sec))
-    dla.plot(size=15,label='stickness={}'.format(dla.stickness))
-    #dla.save()
+    # dla = DLA(N=200,stickness=1,max_num=500)
+    # time_start = time.time()
+    # dla.run()
+    # time_end=time.time()
+    # min = (time_end-time_start)//60
+    # sec = (time_end-time_start)%60
+    # print('DLA {} points time cost: {}min, {}sec'.format(dla.max_num,min,sec))
+    # dla.plot(size=15,label='stickness={}'.format(dla.stickness))
+    # #dla.save()
+
+    num = 2500
+    size = 5
+    N = 300
+    dla = DLA(N=N,stickness= 0.5,max_num=num)
+    datax = [0]
+    datay = [0]
+    while dla.particle_number < dla.max_num:
+        x,y = dla.update()
+        dla.particle_number += 1
+        datax.append(x)
+        datay.append(y)
+    print("DLA DONE")
+    plt.style.use('dark_background')
+    fig = plt.figure(figsize=(10,10))
+    ax = fig.add_subplot(111, aspect='equal',
+                             autoscale_on=False)
+
+    def animate(i):
+        fig.clear()   
+        print("Particle number: ", i+1)
+        ax = fig.add_subplot(111, aspect='equal',
+                             autoscale_on=False)
+        ax.set_xlim(-N//2, N//2), ax.set_xticks([])
+        ax.set_ylim(-N//2, N//2), ax.set_yticks([])
+        ax.set_title('DLA Created by Runze')
+        scat = ax.scatter(datax[:i], datay[:i], s=size,  marker=",", color='white',edgecolors='none',label="stickness = {}".format(dla.stickness))
+        ax.legend()
+        
+    ani = animation.FuncAnimation(fig, animate, interval=30, frames=range(num))
+    ani.save('DLA.gif', writer='pillow')

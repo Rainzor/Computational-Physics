@@ -1,3 +1,4 @@
+from turtle import update
 from sympy import re
 from DLA import*
 
@@ -218,11 +219,9 @@ class DBM(Growth_Model):
         """
         for candidate in self._candidate_set:
             self._set_candidate_potential(candidate)
-            
-    
-    def run(self):
-        """run the DBM algorithm
 
+    def update(self):
+        """
         代码主体分成以下6步：
 
         1.依生长为概率，选择候选点candidate
@@ -234,15 +233,21 @@ class DBM(Growth_Model):
         4.删除第2步加入粒子集合的候选点candidate
 
         5.依照随机行走的方法,更新候选点集合candidate_set中所有的势能potential
-
+        
+        """
+        candidate = self.choose_candidate()
+        self.add_particle(*candidate.position)
+        self.add_candidates(*candidate.position)
+        self.delete_candidate(candidate)
+        self.update_candidate_set_potential()
+        return candidate.position
+    
+    def run(self):
+        """run the DBM algorithm
         """
         while self.particle_number < self.max_num:
             print("Particle number: ",self.particle_number)
-            candidate = self.choose_candidate()
-            self.add_particle(*candidate.position)
-            self.add_candidates(*candidate.position)
-            self.delete_candidate(candidate)
-            self.update_candidate_set_potential()
+            self.update()
             self.particle_number += 1
 
     # @property
@@ -254,9 +259,11 @@ class DBM(Growth_Model):
 
 
 
+
+
+
 if __name__ == "__main__":
     dbm = DBM(N=300,eta = 6,max_num=300)
-
 
     time_start = time.time()
     dbm.run()
