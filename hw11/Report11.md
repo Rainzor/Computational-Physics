@@ -118,7 +118,7 @@ $$
 $$
 ​	而生长速率也要进行相应的修正，设 `candidate`的最大电势为 $\phi_{max}$，最小电势为 $\phi_{min}$
 $$
-v_i = \frac{\phi_{max}-\phi}{\phi_{max}-\phi_{min}}\tag{4}
+v_i = \left(\frac{\phi_{max}-\phi}{\phi_{max}-\phi_{min}}\right)^{\eta}\tag{4}
 $$
 ​	之所以可以加速，是因为每次迭代时，可以利用以前的电势进行迭代，即
 $$
@@ -128,7 +128,7 @@ $$
 
 ##### 算法
 
-1. 依照公式（4）候选点的生长概率，从 **`_candidate_set`**中随机选择一个候选点**x**
+1. 依照公式（4）候选点的生长速率为概率，归一化后，从 **`_candidate_set`**中随机选择一个候选点**x**
 2. 将候选点**x**加入**`_particle_set`**，其状态从 **`CANDIDATE`**变为 **`FILLED`**
 3. 将 **x**从 **`_candidate_set`**中删去
 4. 根据公式（5），迭代 **`_candidate_set`**中的电势

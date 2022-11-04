@@ -83,22 +83,22 @@ if __name__=="__main__":
     n = 50
 
     #较大的随机力
-    # a = 10
+    a = 10
 
     #较小的随机力
-    a = 0.01
+    #a = 0.01
 
     #较大的粘滞阻力
-    #tau = 1
+    tau = 1
 
     #较小的粘滞阻力
-    tau = 5
+    #tau = 5
     T = 10*tau
     h = tau/1000
 
     #绘制粒子运动图像
-    x,v,cov_v = cov_velocity(r,h,tau,10*T,a) 
-    plot_brown(x)
+    # x,v,cov_v = cov_velocity(r,h,tau,10*T,a) 
+    # plot_brown(x)
     
     t = np.arange(start=0, stop=T, step=h, dtype=float)#时间
 
@@ -109,13 +109,17 @@ if __name__=="__main__":
     #计算相关函数
     #迭代n次，计算平均值
     cov_v = 0
+    v = 0
     for i in range(n):
         x_t,v_t,cov_v_t = cov_velocity(r,h,tau,T,a)
         cov_v = cov_v + cov_v_t
-    cov_v_sim = cov_v/n#模拟值
+        v = v + v_t
+    v_0 = v[0];
+    cov_v_sim = cov_v/n-(v @ v_0)/(2*n**2)#模拟值
+    # cov_v_sim = cov_v/n
 
     #统计数据
-    c = cov_v_sim[0]  # type: ignore
+    c = cov_v_sim[0]  # 
     cov_v_theory = cov_theory(t,c)#理论值
 
     # #保存数据

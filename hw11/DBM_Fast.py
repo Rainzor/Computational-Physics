@@ -160,8 +160,6 @@ class DBM_FAST(DBM):
 
 
 
-    # def add_particle(self, x, y):
-
     # def delete_candidate(self, candidate):
 
     def update_candidate_set_potential(self,x,y):
@@ -187,7 +185,13 @@ class DBM_FAST(DBM):
                     self._set_new_candidate_potential(new_candidate)
                     self._candidate_set.add(new_candidate)
     
-
+    def update(self):
+        candidate = self.choose_candidate()
+        self.add_particle(*candidate.position)
+        self.delete_candidate(candidate)
+        self.update_candidate_set_potential(*candidate.position)
+        self.add_candidates(*candidate.position)
+        return candidate.position
 
     def run(self):
         """run the DBM algorithm
@@ -207,11 +211,7 @@ class DBM_FAST(DBM):
         """
         while self.particle_number < self.max_num:
             print("Particle number: ", self.particle_number)
-            candidate = self.choose_candidate()
-            self.add_particle(*candidate.position)
-            self.delete_candidate(candidate)
-            self.update_candidate_set_potential(*candidate.position)
-            self.add_candidates(*candidate.position)
+            self.update()
             #self.update_remain_values()
             self.particle_number += 1
 
@@ -221,35 +221,70 @@ class DBM_FAST(DBM):
 
     #def save(self):
 
+    # def plot_GIF(self,**kwargs):
+
+
+        
+
+
+
+
+
 if __name__ == "__main__":
-    dbm_f = DBM_FAST(N=300,eta = 6,max_num=300)
+    # dbm_f = DBM_FAST(N=300,eta = 6,max_num=1000)
 
-    #计时
-    time_start = time.time()
-    dbm_f.run()
-    time_end=time.time()
-    min = (time_end-time_start)//60
-    sec = (time_end-time_start)%60
-    print('DBM FAST {} points time cost: {}min, {}sec'.format(dbm_f.max_num,min,sec))
+    # #计时
+    # time_start = time.time()
+    # dbm_f.run()
+    # time_end=time.time()
+    # min = (time_end-time_start)//60
+    # sec = (time_end-time_start)%60
+    # print('DBM FAST {} points time cost: {}min, {}sec'.format(dbm_f.max_num,min,sec))
+
+    # dbm_f.plot(size=10,label='eta={}'.format(dbm_f.eta))
+    
+    
+    # #保存数据
+    # #dbm_f.save()
+
+    #动图
+    num = 2500
+    size = 5
+    N = 350
+    eta=6
+    dbm_f2 = DBM_FAST(N=N,eta = 6,max_num=num)
+    datax = [0]
+    datay = [0]
+    while dbm_f2.particle_number < dbm_f2.max_num:
+        
+        x,y = dbm_f2.update()
+        dbm_f2.particle_number += 1
+        datax.append(x)
+        datay.append(y)
+    print("DBM DONE")
+    plt.style.use('dark_background')
+    fig = plt.figure(figsize=(10,10))
+    ax = fig.add_subplot(111, aspect='equal',
+                             autoscale_on=False)
+    
 
 
-    dbm_f.plot(size=10,label='eta={}'.format(dbm_f.eta))
+    def animate(i):
+        fig.clear()   
+        print("Particle number: ", i+1)
+        ax = fig.add_subplot(111, aspect='equal',
+                             autoscale_on=False)
+        ax.set_xlim(-N//2, N//2), ax.set_xticks([])
+        ax.set_ylim(-N//2, N//2), ax.set_yticks([])
+        ax.set_title('DBM FAST Created by Runze')
+        scat = ax.scatter(datax[:i], datay[:i], s=size,  marker=",", color='white',edgecolors='none',label='eta={}'.format(eta))
+        ax.legend()
 
-    dbm_f.save()
 
-    # df = pd.read_csv('hw11/DBM_FAST.csv')
-    # x = df['x']
-    # y = df['y']
-    # #画图
-    # size = 5
-    # label = 'eta={}'.format(6)
-    # plt.style.use('dark_background')
-    # plt.scatter(x, y, s=size, marker=',', color='white',
-    #             edgecolors='none', label=label)
-    # plt.title("DBM_FAST")
-    # plt.legend()
-    # #隐藏坐标轴
-    # plt.axis('square')
-    # plt.xticks([])
-    # plt.yticks([])
-    # plt.show()
+    ani = animation.FuncAnimation(fig, animate, interval=30, frames=range(num))
+    ani.save('DBM_FAST.gif', writer='pillow')
+
+
+
+
+
