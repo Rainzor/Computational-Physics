@@ -76,9 +76,9 @@ def plot_big_data(SIZE, d, **kwargs):
 
         #绘制直接抽样法得到的图像
         #the histogram of the data
-        ax[i].hist(s_x, bins=num_bins, density=True,
+        nt,bins,patches= ax[i].hist(s_x, bins=num_bins, density=True,
                    alpha=0.5, range=(-10, 10), label=d_name+" Histogram of Data")
-
+        # add a 'best fit' line
         ax[i].plot(x, y_gaussian, '--', label="Standard Gaussian")
         # add a 'best fit' line
         ax[i].set_xlabel('x')
@@ -86,7 +86,12 @@ def plot_big_data(SIZE, d, **kwargs):
         ax[i].set_title("N:{}".format(n))
         # Tweak spacing to prevent clipping of ylabel
         ax[i].legend(loc='best', frameon=False)
+        print("N:{}".format(n))
+        print("nt={}, nt num = {}".format(nt,len(nt)))
+        print("bins={}, bins num = {}".format(bins,len(bins)))
+        print("patches={}".format(patches))
         i = i+1
+
     # manager = plt.get_current_fig_manager()
     # manager.window.showMaximized()
 
@@ -95,11 +100,12 @@ def plot_big_data(SIZE, d, **kwargs):
 
 if __name__=="__main__":
     SIZE = 100000
-    plot_big_data(SIZE,expon(), type = "continuous",name = "Exponential")
-    plot_big_data(SIZE, poisson(5), type="discrete", name='Poisson')
-    plot_big_data(SIZE,binom(10),type= "discrete",name = "Binomial" )
+    # plot_big_data(SIZE,expon(), type = "continuous",name = "Exponential")
+    # plot_big_data(SIZE, poisson(5), type="discrete", name='Poisson')
+    # plot_big_data(SIZE,binom(10),type= "discrete",name = "Binomial" )
+    # plot_big_data(SIZE,Cos(),type="continuous",name = "Cos" )
     plot_big_data(SIZE,uniform(),type="continuous",name = "Uniform" )
-    plot_big_data(SIZE,Cos(),type="continuous",name = "Cos" )
+    
     plt.show()
 
     
