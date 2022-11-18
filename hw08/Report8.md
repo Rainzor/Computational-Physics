@@ -22,7 +22,7 @@ $$
 
 ​	被积函数 $f_1(x)与p(x)$ 如下图所示
 
-<img src="F:\MyDocuments\Physics\Compututation Physics\Homework\hw08\f1(x).png" style="zoom:67%;" />
+<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw08\f1(x).png" style="zoom:67%;" />
 
 <center><p>图1：f(x)与g(x)图像
 
@@ -80,13 +80,13 @@ $$
 
 ​	实验结果如下图所示，可以看到**在N>5000后，有效位有4位**
 
-<img src="F:\MyDocuments\Physics\Compututation Physics\Homework\hw08\result1.png" style="zoom: 80%;" />
+<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw08\result1.png" style="zoom: 80%;" />
 
 <center><p>图3
 
 ​	为了验证积分结果的有效位数精度的变化趋势，有下图
 
-<img src="F:\MyDocuments\Physics\Compututation Physics\Homework\hw08\error1.png" style="zoom: 80%;" />
+<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw08\error1.png" style="zoom: 80%;" />
 
 <center><p>图4：Monte Carlo方法的误差趋势
 
@@ -94,7 +94,7 @@ $$
 
 ​	但同样在实验中会发现，在N较小时，误差会有较大波动性。
 
-<img src="F:\MyDocuments\Physics\Compututation Physics\Homework\hw08\BadError1.png" style="zoom:80%;" />
+<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw08\BadError1.png" style="zoom:80%;" />
 
 <center><p>图5：不稳定的结果
 
@@ -106,13 +106,13 @@ $$
 
 ​	实验结果如下，在**N>20000后，至少有2位的有效位数**
 
-<img src="F:\MyDocuments\Physics\Compututation Physics\Homework\hw08\result2.png" style="zoom:67%;" />
+<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw08\result2.png" style="zoom:67%;" />
 
 <center><p>图6
 
 ​	误差变化趋势如下
 
-<img src="F:\MyDocuments\Physics\Compututation Physics\Homework\hw08\error2.png" style="zoom:80%;" />
+<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw08\error2.png" style="zoom:80%;" />
 
 <center><p>图7
 

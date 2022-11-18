@@ -42,7 +42,7 @@ z=\cos \theta
 $$
 ​	可得绘制出上半球面的均匀分布图像
 
-![](F:\MyDocuments\Physics\Compututation Physics\Homework\hw03\球面均匀分布.png)
+![](F:\MyDocuments\Physics\Computational Physics\Homework\hw03\球面均匀分布.png)
 
 ### 4 Summary
 

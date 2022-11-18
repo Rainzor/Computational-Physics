@@ -20,7 +20,7 @@ $$
 $$
 F(x) =L(x)= \frac{1}{\sqrt{2\pi}}\frac{1.01}{1+0.25x^4}\\
 $$
-<img src="F:\MyDocuments\Physics\Compututation Physics\Homework\hw06\Compare.png" style="zoom:50%;" />
+<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw06\Compare.png" style="zoom:50%;" />
 <center><p> 图1：比较函数与待抽样函数
 
 
@@ -79,7 +79,7 @@ $$
 
 ​	实验中得到标准高斯分布的统计图如下所示。
 
-<img src="F:\MyDocuments\Physics\Compututation Physics\Homework\hw06\直方图.png" style="zoom:50%;" />
+<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw06\直方图.png" style="zoom:50%;" />
 
 <center><p> 图2：抽样直方图与正态分布比较
 
@@ -91,7 +91,7 @@ $$
 
 ​	再统计一下两次抽样的抽样效率，在程序中输出如下：
 
-![](F:\MyDocuments\Physics\Compututation Physics\Homework\hw06\rate of sampling.png)	
+![](F:\MyDocuments\Physics\Computational Physics\Homework\hw06\rate of sampling.png)	
 
 ​	两次抽样后，总抽样效率只有
 $$
@@ -101,7 +101,7 @@ $$
 
 ​	分析一下可以看到，在第一次对F(x)进行舍选法时，选择函数h(x)与 $M$ 对比如下
 
-<img src="F:\MyDocuments\Physics\Compututation Physics\Homework\hw06\抽样对比.png" style="zoom:50%;" />
+<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw06\抽样对比.png" style="zoom:50%;" />
 
 <center><p> 图3：第一次抽样图像
 
@@ -109,7 +109,7 @@ $$
 
 ​	但从下图可以看到第二次对高斯函数抽样效率明显较高，是由于选择的比较函数效果较好。
 
-<img src="F:\MyDocuments\Physics\Compututation Physics\Homework\hw06\Compare.png" style="zoom:50%;" />
+<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw06\Compare.png" style="zoom:50%;" />
 
 <center><p> 图4：第二次抽样图像
 

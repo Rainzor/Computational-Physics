@@ -36,7 +36,7 @@ $$
 
 3. 根据Metropolis-Hasting方法，令
    $$
-   r_1=\frac{p_jT_{ji}}{p_i T_{ij}}=\frac{p(x')T(x)}{p(x) T(x')}=(\frac{x'}{x_n})^{\alpha-1}\exp[-\frac{x'-x_n}{\beta}]\exp[\frac{x'-x_n}{\gamma}]
+   r_1=\frac{p_jT_{ji}}{p_i T_{ij}}=\frac{p(x')T(x_n)}{p(x_n) T(x')}=(\frac{x'}{x_n})^{\alpha-1}\exp[-\frac{x'-x_n}{\beta}]\exp[\frac{x'-x_n}{\gamma}]
    $$
 
 4. 在[0,1]均匀分布中抽样出随机点$\xi$，若 $\xi<\min(1,r)$，取 $x_{n+1}=x'$；若**$\xi>\min(1,r)$**，取 $x_{n+1}=x_n$。
@@ -64,7 +64,7 @@ r_2=\frac{p_iT_{ji}}{p_iT_{ij}}=(\frac{x'-\alpha \beta}{x_n-\alpha \beta})^2(\fr
 $$
 ​	**其他步骤不变**，即可得到满足 g(x) 概率分布的抽样。
 
-##### 2.2.2 比值法求积分
+#### 2.2.2 比值法求积分
 
 ​	为了得到数值积分结果，即得到归一化系数 C，对集合 $X$中的点进行统计，则可以得到 x 的近似概率分布函数$g^*(x)$，那么数值积分为 
 $$
@@ -89,7 +89,7 @@ $$
 
 ​	利用Metropolis方法对p(x)抽样结果如下所示
 
-<img src="F:\MyDocuments\Physics\Compututation Physics\Homework\hw13\sample1.png" style="zoom: 20%;" />
+<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw13\sample1.png" style="zoom: 20%;" />
 
 ​	Metropolis方法抽样结果不错
 
@@ -109,7 +109,7 @@ $$
 
 ​		实验中，尝试了 $\alpha=2$, $\beta=3$的取值情况，改变 $\gamma$取值，修改建议分布参数，得到以下曲线
 
-<img src="F:\MyDocuments\Physics\Compututation Physics\Homework\hw13\rate_error1.png" alt="	" style="zoom: 25%;" />
+<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw13\rate_error1.png" alt="	" style="zoom: 25%;" />
 
 <center> 	图1：&gamma; 与相对误差和接受效率关系
 
@@ -122,7 +122,7 @@ $$
 
 ​	如图2所示
 <center>
-<img src="F:\MyDocuments\Physics\Compututation Physics\Homework\hw13\px&Tx.png" style="zoom:25%;" />
+<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw13\px&Tx.png" style="zoom:25%;" />
 
 
 <center> 	图2：&alpha;,&beta;与不同&gamma;取值下待抽样分布与建议分布图像
@@ -180,11 +180,11 @@ $$
 依然取 $\alpha=2,\beta=3$，则 $p(x)$图像如下
 
 <center><half>
-	<img src="F:\MyDocuments\Physics\Compututation Physics\Homework\hw13\px2.png" style="zoom: 15%;" />
-	<img src="F:\MyDocuments\Physics\Compututation Physics\Homework\hw13\sample2_only.png" style="zoom:15%;" />
+	<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw13\px2.png" style="zoom: 15%;" />
+	<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw13\sample2_only.png" style="zoom:15%;" />
 <center> 	图3：p(x)与抽样图像
 
-<img src="F:\MyDocuments\Physics\Compututation Physics\Homework\hw13\sample2.png" style="zoom: 25%;" />
+<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw13\sample2.png" style="zoom: 25%;" />
 
 <center> 	图4：p(x)与抽样图像对比
 ​	由图3，图4可见抽样的形状是一致的，但放在一起，可以看出 p（x）未归一化	
@@ -201,7 +201,7 @@ $$
 
 实验中，尝试了 $\alpha=2$, $\beta=3$的取值情况，改变 $\gamma$取值，修改建议分布参数，得到以下曲线
 
-<img src="F:\MyDocuments\Physics\Compututation Physics\Homework\hw13\rate_error2.png" style="zoom: 33%;" />
+<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw13\rate_error2.png" style="zoom: 33%;" />
 
 <center> 	图5：&gamma; 与相对误差和接受效率关系
 

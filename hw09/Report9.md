@@ -44,30 +44,30 @@ $$
 
 #### 3.1 指数分布
 
-![](F:\MyDocuments\Physics\Compututation Physics\Homework\hw09\Exponential.png)
+![](F:\MyDocuments\Physics\Computational Physics\Homework\hw09\Exponential.png)
 <center><p> 图1：指数分布验证中心极限定理
 
 #### 3.2 泊松分布
 
-![](F:\MyDocuments\Physics\Compututation Physics\Homework\hw09\Poisson.png)
+![](F:\MyDocuments\Physics\Computational Physics\Homework\hw09\Poisson.png)
 
 <center><p> 图2：泊松分布验证中心极限定理
 
 #### 3.3 二项分布
 
-![](F:\MyDocuments\Physics\Compututation Physics\Homework\hw09\Binomial.png)
+![](F:\MyDocuments\Physics\Computational Physics\Homework\hw09\Binomial.png)
 
 <center><p> 图3：二项分布验证中心极限定理
 
 #### 3.4 均匀分布
 
-![](F:\MyDocuments\Physics\Compututation Physics\Homework\hw09\Uniform.png)
+![](F:\MyDocuments\Physics\Computational Physics\Homework\hw09\Uniform.png)
 
 <center><p> 图4：均匀分布验证中心极限定理
 
 #### 3.5 余弦分布
 
-![](F:\MyDocuments\Physics\Compututation Physics\Homework\hw09\Cos.png)
+![](F:\MyDocuments\Physics\Computational Physics\Homework\hw09\Cos.png)
 
 <center><p> 图5：余弦分布验证中心极限定理
 

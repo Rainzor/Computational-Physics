@@ -14,13 +14,13 @@
 
 ​	本题要讨论的是正方形点阵上的键逾渗，而键逾渗有6条相邻的键，如下图所示
 
-<img src="F:\MyDocuments\Physics\Compututation Physics\Homework\hw12\键逾渗.png" alt="键逾渗" style="zoom: 25%;" />
+<img src="F:\MyDocuments\Physics\Computation Physics\Homework\hw12\键逾渗.png" alt="键逾渗" style="zoom: 25%;" />
 
 <center><p>图1：方阵键逾渗
 
 ​	且与两边有两个点联通，与上下有四个点联通，但实际上这个结构与三角形的座逾渗结构十分相似，如下图所示：
 
-<img src="F:\MyDocuments\Physics\Compututation Physics\Homework\hw12\三角点阵.png" alt="三角点阵" style="zoom: 25%;" />
+<img src="F:\MyDocuments\Physics\Computation Physics\Homework\hw12\三角点阵.png" alt="三角点阵" style="zoom: 25%;" />
 
 <center><p>图2：三角阵座逾渗
 
@@ -30,7 +30,7 @@
 
 ​	我们重整化方式如下，取尺度放大因子为2的元胞。
 
-<img src="F:\MyDocuments\Physics\Compututation Physics\Homework\hw12\4.png" alt="4" style="zoom:25%;" />
+<img src="F:\MyDocuments\Physics\Computation Physics\Homework\hw12\4.png" alt="4" style="zoom:25%;" />
 <center><p>图3：b=2元胞
 
 
@@ -38,24 +38,24 @@
 
 1. 四个点都占据
 
-   <img src="F:\MyDocuments\Physics\Compututation Physics\Homework\hw12\4.png" alt="4" style="zoom:25%;" />
+   <img src="F:\MyDocuments\Physics\Computation Physics\Homework\hw12\4.png" alt="4" style="zoom:25%;" />
 <center><p>图4：四个点占据
 
 2. 三个点占据
 
 <center><half>
-   <img src="F:\MyDocuments\Physics\Compututation Physics\Homework\hw12\3_1.png" alt="3_1" style="zoom:10%;" />
-	<img src="F:\MyDocuments\Physics\Compututation Physics\Homework\hw12\3_2.png" alt="3_2" style="zoom:10%;" />
-    <img src="F:\MyDocuments\Physics\Compututation Physics\Homework\hw12\3_3.png" alt="3_3" style="zoom:10%;" />
-    <img src="F:\MyDocuments\Physics\Compututation Physics\Homework\hw12\3_4.png" alt="3_3" style="zoom:10%;" />
+   <img src="F:\MyDocuments\Physics\Computation Physics\Homework\hw12\3_1.png" alt="3_1" style="zoom:10%;" />
+	<img src="F:\MyDocuments\Physics\Computation Physics\Homework\hw12\3_2.png" alt="3_2" style="zoom:10%;" />
+    <img src="F:\MyDocuments\Physics\Computation Physics\Homework\hw12\3_3.png" alt="3_3" style="zoom:10%;" />
+    <img src="F:\MyDocuments\Physics\Computation Physics\Homework\hw12\3_4.png" alt="3_3" style="zoom:10%;" />
 
 
 <center><p>图5：三个点占据
 3. 两个点占据
 <center><half>
-​	<img src="F:\MyDocuments\Physics\Compututation Physics\Homework\hw12\2_1.png" alt="2_1" style="zoom:15%;" />
-    <img src="F:\MyDocuments\Physics\Compututation Physics\Homework\hw12\2_2.png" alt="2_2" style="zoom:15%;" />
-     <img src="F:\MyDocuments\Physics\Compututation Physics\Homework\hw12\2_3.png" alt="2_3" style="zoom:15%;" />
+​	<img src="F:\MyDocuments\Physics\Computation Physics\Homework\hw12\2_1.png" alt="2_1" style="zoom:15%;" />
+    <img src="F:\MyDocuments\Physics\Computation Physics\Homework\hw12\2_2.png" alt="2_2" style="zoom:15%;" />
+     <img src="F:\MyDocuments\Physics\Computation Physics\Homework\hw12\2_3.png" alt="2_3" style="zoom:15%;" />
 <center><p>图6：两个点占据
 
 

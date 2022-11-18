@@ -36,7 +36,7 @@ $$
 
 ​	实验结果如下，每组有1e5个数据点
 
-![](F:\MyDocuments\Physics\Compututation Physics\Homework\hw02\16807&Fibonacci比较.png)
+![](F:\MyDocuments\Physics\Computational Physics\Homework\hw02\16807&Fibonacci比较.png)
 
 <center><p>图1：随机数序列中满足关系 Xn-1>Xn+1 >Xn的比重
 
