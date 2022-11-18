@@ -37,7 +37,7 @@ M_2=0.005,&&3006\le x\le3013\\
 \end{aligned}
 \right.
 $$
-<img src="F:\MyDocuments\Physics\Compututation Physics\Homework\hw07\比较函数.png" style="zoom: 70%;" />
+<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw07\比较函数.png" style="zoom: 70%;" />
 
 ​	这样选择函数累积函数的反函数为:
 $$
@@ -77,7 +77,7 @@ $$
 
 #### 3.1 直接法抽样结果
 
-<img src="F:\MyDocuments\Physics\Compututation Physics\Homework\hw07\Direct_Sampling.png" style="zoom:80%;" />
+<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw07\Direct_Sampling.png" style="zoom:80%;" />
 
 由于是直接法抽样，所以抽样效率是 100%。
 
@@ -85,11 +85,11 @@ $$
 
 #### 3.2 舍选法抽样结果
 
-<img src="F:\MyDocuments\Physics\Compututation Physics\Homework\hw07\Selection_Sampling.png" style="zoom:80%;" />
+<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw07\Selection_Sampling.png" style="zoom:80%;" />
 
 通过舍选法，得到连续变量的抽样效率只有有38.735%
 
-<img src="F:\MyDocuments\Physics\Compututation Physics\Homework\hw07\Sampling_Efficiency.png" style="zoom:80%;" />
+<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw07\Sampling_Efficiency.png" style="zoom:80%;" />
 
 从得到的直方图来看，仍然很吻合实验得到曲线，抽样效率低可能是由于选择函数选取的不够好。
 

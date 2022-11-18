@@ -158,12 +158,12 @@ C --> D(DBM_FAST)
 如下图所示，考虑了黏度分别为 **0.01,0.1,0.5,1**的DLA模型，生长了3000个点
 
 <center class="half">
-    <img src="F:\MyDocuments\Physics\Compututation Physics\Homework\hw11\DLA_0.01_3000.png"width=250/>
-    <img src="F:\MyDocuments\Physics\Compututation Physics\Homework\hw11\DLA_0.1_3000.png"width=250/>
+    <img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw11\DLA_0.01_3000.png"width=250/>
+    <img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw11\DLA_0.1_3000.png"width=250/>
 </center>
 <center class="half">
-    <img src="F:\MyDocuments\Physics\Compututation Physics\Homework\hw11\DLA_0.5_3000.png" width=250/>
-    <img src="F:\MyDocuments\Physics\Compututation Physics\Homework\hw11\DLA_1_3000.png" width=250/>
+    <img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw11\DLA_0.5_3000.png" width=250/>
+    <img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw11\DLA_1_3000.png" width=250/>
 </center>
 <center><p>图1 DLA不同stickness的对比（3000点）
 
@@ -180,12 +180,12 @@ C --> D(DBM_FAST)
 ​	如下图所示，考虑了eta分别为 **0，3，6，10** 的DBM模型，由于代码效率受限，只生长了300个点
 
 <center class="half">
-    <img src="F:\MyDocuments\Physics\Compututation Physics\Homework\hw11\DBM_0_300.png"width=250/>
-    <img src="F:\MyDocuments\Physics\Compututation Physics\Homework\hw11\DBM_3_300.png"width=250/>
+    <img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw11\DBM_0_300.png"width=250/>
+    <img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw11\DBM_3_300.png"width=250/>
 </center>
 <center class="half">
-    <img src="F:\MyDocuments\Physics\Compututation Physics\Homework\hw11\DBM_6_300.png" width=250/>
-    <img src="F:\MyDocuments\Physics\Compututation Physics\Homework\hw11\DBM_10_300.png"width=250/>
+    <img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw11\DBM_6_300.png" width=250/>
+    <img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw11\DBM_10_300.png"width=250/>
 </center>
 <center><p>图2 DBM不同eta的对比（300点）
 
@@ -202,12 +202,12 @@ C --> D(DBM_FAST)
 ​	改善了算法后，得到eta分别为 **0，3，6，10** 的DLA模型，生长3000个点，有以下图像
 
 <center class="half">
-    <img src="F:\MyDocuments\Physics\Compututation Physics\Homework\hw11\DBM_FAST_0_3000.png"width=250/>
-    <img src="F:\MyDocuments\Physics\Compututation Physics\Homework\hw11\DBM_FAST_3_3000.png"width=250/>
+    <img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw11\DBM_FAST_0_3000.png"width=250/>
+    <img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw11\DBM_FAST_3_3000.png"width=250/>
 </center>
 <center class="half">
-    <img src="F:\MyDocuments\Physics\Compututation Physics\Homework\hw11\DBM_FAST_6_3000.png" width=250/>
-    <img src="F:\MyDocuments\Physics\Compututation Physics\Homework\hw11\DBM_FAST_10_3000.png"width=250/>
+    <img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw11\DBM_FAST_6_3000.png" width=250/>
+    <img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw11\DBM_FAST_10_3000.png"width=250/>
 </center>
 <center><p>图3 DBM FAST算法不同eta的对比（3000个点）
 
@@ -224,12 +224,12 @@ C --> D(DBM_FAST)
 下图是300个点的DBM FAST算法
 
 <center class="half">
-    <img src="F:\MyDocuments\Physics\Compututation Physics\Homework\hw11\DBM_FAST_0_300.png"width=250/>
-    <img src="F:\MyDocuments\Physics\Compututation Physics\Homework\hw11\DBM_FAST_3_300.png"width=250/>
+    <img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw11\DBM_FAST_0_300.png"width=250/>
+    <img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw11\DBM_FAST_3_300.png"width=250/>
 </center>
 <center class="half">
-    <img src="F:\MyDocuments\Physics\Compututation Physics\Homework\hw11\DBM_FAST_6_300.png" width=250/>
-    <img src="F:\MyDocuments\Physics\Compututation Physics\Homework\hw11\DBM_FAST_10_300.png"width=250/>
+    <img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw11\DBM_FAST_6_300.png" width=250/>
+    <img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw11\DBM_FAST_10_300.png"width=250/>
 </center>
 <center><p>图3 DBM FAST算法不同eta的对比（300个点）
 
@@ -237,9 +237,9 @@ C --> D(DBM_FAST)
 
 并且时间得到加速
 
-![](F:\MyDocuments\Physics\Compututation Physics\Homework\hw11\time_DBM.png)
+![](F:\MyDocuments\Physics\Computational Physics\Homework\hw11\time_DBM.png)
 
-![](F:\MyDocuments\Physics\Compututation Physics\Homework\hw11\time_DBM_FAST.png)
+![](F:\MyDocuments\Physics\Computational Physics\Homework\hw11\time_DBM_FAST.png)
 
 几乎加快了1000倍
 

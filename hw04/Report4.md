@@ -89,7 +89,7 @@ $$
 
 ​	在实验中定义 `pdf`作为定义的函数，抽样1e5个数据点，且在不同区间按照一定比例分布，于是画出直方图与概率分布函数：
 
-<img src="F:\MyDocuments\Physics\Compututation Physics\Homework\hw04\直方图.png" style="zoom:72%;" />
+<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw04\直方图.png" style="zoom:72%;" />
 
 ​	由图可见，这样的参数选取，通过舍选抽样法得到的抽样频数分布和密度分布函数性质相近，可见所得抽样确实服从 pdf 函数所代表的分布。
 

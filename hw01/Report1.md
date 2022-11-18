@@ -42,7 +42,7 @@ $$
 
 ​	采用相邻间隔随机数 $(l_n,l_{n+l})$ 生成二维平面,取5000个数,画出散点图.
 
-<img src="F:\MyDocuments\Physics\Compututation Physics\Homework\hw1&2\随机数分布图.png"
+<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw1&2\随机数分布图.png"
 	style="zoom:67%;" />
 
 <center><p>图1：随机数分布</p></center>
@@ -61,7 +61,7 @@ $$
 $$
 E(x^k)=\int_0^1x^kdx=\frac{1}{1+k}
 $$
-<img src="F:\MyDocuments\Physics\Compututation Physics\Homework\hw1&2\均匀性检验程序输出.png" style="zoom:50%;" />
+<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw1&2\均匀性检验程序输出.png" style="zoom:50%;" />
 
 <center><p>图2：不同N，k下，实验值与理论值结果
 
@@ -70,7 +70,7 @@ $$
 
 ​	以k=5为例，如图3所示，样本矩和理想值的偏差大致满足满足 $O（1/\sqrt{N}$）的关系
 
-<img src="F:\MyDocuments\Physics\Compututation Physics\Homework\hw1&2\均匀性.png" style="zoom:50%;" />
+<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw1&2\均匀性.png" style="zoom:50%;" />
 
 <center><p>图3：5阶矩实验偏差与样本数N的关系</p></center>
 
@@ -82,7 +82,7 @@ $$
 $$
 ​	$\chi^2$服从自由度为K-1的卡方分布，在显著水平 $\alpha=0.05$的条件下，对不同k，与N进行检验，得到图4结果（下图仅给出 $N\ge10^5$的结果 ），N是随机数个数，k为子区间个数，statistics为检验统计量，Percent_point为分布点
 
-<img src="F:\MyDocuments\Physics\Compututation Physics\Homework\hw1&2\卡方分布检验图.png" style="zoom:50%;" />
+<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw1&2\卡方分布检验图.png" style="zoom:50%;" />
 
 <center><p>图4：卡方分布检验</p></center>
 
@@ -98,7 +98,7 @@ $$
 
 ​	实验当中 N 取 $2\times10^7$，在 l 处于 1 到 9 时，可见 C(l)接近于 0。即数据的二维独立性非常高，可见 Schrage 方法得到的 数据独立性不错。
 
-<img src="F:\MyDocuments\Physics\Compututation Physics\Homework\hw1&2\关联性检验程序输出.png" style="zoom:80%;" />
+<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw1&2\关联性检验程序输出.png" style="zoom:80%;" />
 
 ### 4 Summary
 

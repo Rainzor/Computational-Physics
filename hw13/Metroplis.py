@@ -80,7 +80,7 @@ class MetroSample(object):
         if(x0==1):
             m = 2000  # the number of points to be discarded
         else:
-            m = 0
+            m = 1
         x = np.zeros(N+m)
         x[0] = x0
 

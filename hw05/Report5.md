@@ -76,7 +76,7 @@ $$
 
 ​	在实验中，我们利用Marsaglia方法，绘制出如下图像
 
-<img src="F:\MyDocuments\Physics\Compututation Physics\Homework\hw05\三维球面.png" style="zoom: 50%;" />
+<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw05\三维球面.png" style="zoom: 50%;" />
 
 ​	 左图可见得到的确实是均匀分布的球面。且可以看到，在XY平面内投影并不均匀，从而佐证了原图像是球面均匀分布。
 
