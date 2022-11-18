@@ -86,6 +86,7 @@ class Schrage16807(object):
                     tmp[i+1] =(v/r)*np.sqrt(-4*np.log(r))
                 i += 2
                 # print((u/r)*np.sqrt(-4*np.log(r)), (v/r)*np.sqrt(-4*np.log(r)))
+        
         return tmp.reshape(size)
         
     def normal(self, size=None,loc=0, scale=1):
