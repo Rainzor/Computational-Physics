@@ -4,7 +4,7 @@
 
 from queue import Queue 
 import numpy as np
-from Schrage_16807 import*
+from hw17.Schrage_16807 import*
 
 #Fibonacci延迟产生器
 class LaggedFibonacci(object):

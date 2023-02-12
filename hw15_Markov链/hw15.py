@@ -29,12 +29,9 @@ class MetroSample(object):
     
     sample : (public)
         Sample N points from the distribution
-
-    plot_hist :
-        Plot the histogram of the samples
     
     integrate :
-        Integrate the hx function from 0 to infinity
+        Integrate the hx function using the samples
     
     """
 

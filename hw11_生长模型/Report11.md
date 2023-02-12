@@ -199,7 +199,7 @@ C --> D(DBM_FAST)
 
 ### 3.3 DBM_FAST
 
-​	改善了算法后，得到eta分别为 **0，3，6，10** 的DLA模型，生长3000个点，有以下图像
+​	改善了算法后，得到eta分别为 **0，3，6，10** 的DBM模型，生长3000个点，有以下图像
 
 <center class="half">
     <img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw11\DBM_FAST_0_3000.png"width=250/>

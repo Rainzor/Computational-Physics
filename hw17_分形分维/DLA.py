@@ -4,8 +4,8 @@ from warnings import WarningMessage
 import numpy as np
 import matplotlib.pyplot as plt
 from abc import ABC, abstractmethod
-import matplotlib.animation as animation
 
+#基类
 class Growth_Model(ABC):
     """Growth models can be imagined as having a seed.
         Particles are then gradually added according to certain rules, 
@@ -48,18 +48,19 @@ class Growth_Model(ABC):
         self.parameter = parameter
         self.particle_number = 1#粒子数
         self.model_name = "Growth_Model"     
-
-    
+  
     @abstractmethod
-    def _check_boundery(self, x, y):  # 检查点是否在边界内
+    def _check_boundery(self, x, y):  
+    # 检查点是否在边界内
         pass
 
-    def _check_point(self, x, y):  # 检查点是否已在集合中
+    def _check_point(self, x, y):  
+    # 检查点是否已在集合中
         return (x, y) in self._particles_set
 
 
     def random_walk(self,x,y):
-        #随机漫步
+    #随机漫步
         p = self.r.rand()
         if p < 1/4 :
             x -= 1
@@ -72,27 +73,27 @@ class Growth_Model(ABC):
         return x,y
 
     def add_particle(self,x,y):
-        #生长一个粒子
+    #生长一个粒子
         self._particles_set.add((x,y))
 
     @abstractmethod
     def update(self):
-        #更新内部状态
+    #更新内部状态
         pass
 
     @abstractmethod
     def run(self):
-        #运行程序
+    #运行程序
         pass
 
     @property
     def data(self):
-        #返回数据
+    #返回数据
         x,y = zip(*self._particles_set)
         return x,y
     
     def plot(self, **kwargs):
-        #画图
+    #画图
         size = kwargs['size']
         label = kwargs['label']
         x, y = self.data
@@ -108,7 +109,7 @@ class Growth_Model(ABC):
         plt.show()
 
     def plot_data(self, filename, **kwargs):
-        #读取数据
+    #读取数据
         df = pd.read_csv(filename)
         x = df['x']
         y = df['y']
@@ -125,8 +126,8 @@ class Growth_Model(ABC):
         plt.xticks([])
         plt.yticks([])
         plt.show()
-
     def plot_GIF(self,**kwargs):
+    #画动图
         """plot the GIF of the model
 
         """
@@ -159,12 +160,21 @@ class Growth_Model(ABC):
 
 
     def save(self):
-        #保存数据
+    #保存数据
         x, y = self.data
         df = pd.DataFrame(data={'x': x, 'y': y})
         df.to_csv(self.model_name+'.csv', index=False)
 
-
+    def read(self,filename):
+    #读取数据
+        df = pd.read_csv(filename)
+        x = df['x']
+        y = df['y']
+        self._particles_set = set(zip(x,y))
+        self.particle_number = len(self._particles_set)
+        
+        
+#DLA模型
 class DLA(Growth_Model):
     """DLA model
     The Diffusion Limited Aggregation (DLA) algorithm used a random walk to add cells.
@@ -201,6 +211,14 @@ class DLA(Growth_Model):
 
         _is_legal: check if the point is legal
 
+        hausdorff_dim: calculate the hausdorff dimension of the model
+
+        _sandbox: calculate the sandbox of the model
+
+        _cov_density: calculate the coverage density of the model
+
+
+
     """
     def __init__(self,N,stickness=1,max_num=1000) -> None:
         self.N = N  #图像边长
@@ -215,10 +233,12 @@ class DLA(Growth_Model):
         self.r = Schrage16807(seed_time())
         self.range_x = N//2+1
         self.range_y = N//2+1       
-        self.radius = 20 #半径
+        self.radius = 20 #回转半径
 
         self.particle_number = 2      #记录点的个数
         self._particles_set = {(0,0),(1,0)} # store initial data of DLA
+
+        self.dim = 2
 
     def _check_boundery(self,x,y):#检查点是否在边界内
         return -self.range_x< x <self.range_x and -self.range_y < y < self.range_y 
@@ -232,14 +252,22 @@ class DLA(Growth_Model):
             for j in range(-1,2):
                 if (x+i, y+j) in self._particles_set:
                     return True
-
+        return False
+    def _check_around4(self,x,y):
+        for i in [-1,1]:
+            for j in [-1,1]:
+                if (x, y+j) in self._particles_set:
+                    return True
+                if (x+i, y) in self._particles_set:
+                    return True
+        return False
     def _is_legal(self,x,y):
         return self._check_boundery(x,y) and  not self._check_point(x,y)
 
     @property
     def stickness(self):
         return self.parameter
-########################################################################################
+#------------------------DLA数据生成--------------------------------
     def _rand_sample(self):
     #随机采样圆上的点或边界上的点
         radius = np.round(2*self.radius)
@@ -254,6 +282,7 @@ class DLA(Growth_Model):
             y = np.round(y/r*radius)
             return x,y
         else:#如果直径大于N，就在边界上采样
+
             N = self.N
             r_int = int(self.r.rand()*N-N//2) #向0取整
             p = self.r.rand()
@@ -271,7 +300,6 @@ class DLA(Growth_Model):
                 y = -N//2
 
             return x,y
-
 
     def generate_point(self):
     #创造一个随机点
@@ -300,13 +328,12 @@ class DLA(Growth_Model):
             x, y = self.random_walk(x, y)
             if not self._check_boundery(x, y):  # 如果超出边界，就重新生成一个随机点
                 x, y = self.generate_point()
-            if self._check_around(x, y):
+            if self._check_around4(x, y):
                 if self.r.rand() < self.stickness:  # 如果周围有点且黏住
                     self.add_particle(x, y)
                     if x**2+y**2 > self.radius**2:
-                        self.radius = np.sqrt(x**2+y**2)
+                        self.radius = np.sqrt(x**2+y**2)#更新回转半径
                     return x,y
-
 
     def run(self):
         """Run the DLA model
@@ -317,51 +344,136 @@ class DLA(Growth_Model):
             self.update()
             self.particle_number += 1
 
-    #def data(self):
+    def read(self,filename):
+        #读取数据
+        df = pd.read_csv(filename)
+        x = df['x']
+        y = df['y']
+        r = x**2+y**2
+        self.radius = np.sqrt(r.max())
+        self._particles_set = set(zip(x,y))
+        self.particle_number = len(self._particles_set)
+#----------------------分形维数计算--------------------------------
+    def hausdorff_dim(self, method):
+        if(method=='sandbox'):
+            return self._sandbox()
+        elif(method == 'cov_density'):
+            return self._cov_density()
 
-    #def plot(self)
+    def _sandbox(self):
+            #沙盒法计算维数
+        radius = 4
+        x,y = self.data
+        x = np.array(x)
+        y = np.array(y)
+        num_list = []
+        exp_list = []
+        len_bound = self.radius*4/5
+        while radius < len_bound:            
+            #利用Boolean数组进行筛选
+            num = sum((x<radius)&(x>-radius)&(y<radius)&(y>-radius))
+            num_list.append(num)
+            exp_list.append(np.log2(radius*2))
+            radius = radius*np.sqrt(2)
+        
+        exp_list = np.array(exp_list)
+        log_num_list = np.log2(num_list)
+        coeff = np.polyfit(exp_list, log_num_list, 1)
+        plt.plot(exp_list, log_num_list,'o',label='data points')
+        plt.plot(exp_list, coeff[0]*exp_list+coeff[1],label='fitting line')
+        plt.legend()
+        plt.title('Sandbox method')
+        plt.xlabel('log2(r)')
+        plt.ylabel('log2(N)')
+        plt.show()
+        self.dim = coeff[0]
+        return coeff[0]
 
-    #def save(self):
+    def _cov_density(self):
+        #密度相关法计算维数
+        set_data = self._particles_set
+        num = len(set_data)
+        set_l = set()
+        set_r = set()
+        set_u = set()
+        set_d = set()
+
+        radius = 16
+        density_list = []
+        exp_list = []
+        len_bound = self.radius*4/5
+        while radius < len_bound:
+            #每次循环增长2倍半径
+            set_l.clear()
+            set_r.clear()
+            set_u.clear()
+            set_d.clear()
+            for x,y in set_data:
+                set_l.add((x-radius,y))
+                set_r.add((x+radius,y))
+                set_u.add((x,y+radius))
+                set_d.add((x,y-radius))
+
+            #利用集合的交集计算密度
+            density = (len(set_data&set_l)+len(set_data&set_r)+len(set_data&set_u)+len(set_data&set_d))
+            density_list.append(density)
+            exp_list.append(np.log2(radius))
+
+            # if(radius*np.sqrt(2) < len_bound):
+            #     break
+
+            #这里计算的是 sqrt2 倍的半径，得到更加精细的结果
+            set_l.clear()
+            set_r.clear()
+            set_u.clear()
+            set_d.clear()
+            for x,y in set_data:
+                set_l.add((x-radius,y+radius))
+                set_r.add((x+radius,y-radius))
+                set_u.add((x+radius,y+radius))
+                set_d.add((x-radius,y-radius))
+
+            #利用集合的交集计算密度
+            density = (len(set_data&set_l)+len(set_data&set_r)+len(set_data&set_u)+len(set_data&set_d))
+            density_list.append(density)
+            exp_list.append(np.log2(radius)+0.5)
+            radius = radius<<1
+
+        exp_list = np.array(exp_list[:-1])
+        log_num_list = np.log2(density_list[:-1])
+        density_list = np.array(density_list)
+        coeff = np.polyfit(exp_list, log_num_list, 1)
+        plt.plot(exp_list, log_num_list, 'o', label='data points')
+        plt.plot(exp_list, coeff[0]*exp_list+coeff[1], label='fitting line')
+        plt.legend()
+        plt.title('density related method')
+        plt.xlabel(r'$\log_2(r)$')
+        plt.ylabel(r'$\log_2(C(r))$')
+        plt.show()
+
+        self.dim = 2 + coeff[0]
+        return self.dim
 
 
 if __name__=="__main__":
-    # dla = DLA(N=200,stickness=1,max_num=500)
+    dla = DLA(N=500,stickness=1,max_num=10000)
+    # 生成DLA数据 10000个点，时间大概需要5min
     # time_start = time.time()
     # dla.run()
     # time_end=time.time()
     # min = (time_end-time_start)//60
     # sec = (time_end-time_start)%60
     # print('DLA {} points time cost: {}min, {}sec'.format(dla.max_num,min,sec))
-    # dla.plot(size=15,label='stickness={}'.format(dla.stickness))
-    # #dla.save()
+    # dla.plot(size=0.01,label='stickness={}'.format(dla.stickness))
 
-    num = 2500
-    size = 5
-    N = 300
-    dla = DLA(N=N,stickness= 0.5,max_num=num)
-    datax = [0]
-    datay = [0]
-    while dla.particle_number < dla.max_num:
-        x,y = dla.update()
-        dla.particle_number += 1
-        datax.append(x)
-        datay.append(y)
-    print("DLA DONE")
-    plt.style.use('dark_background')
-    fig = plt.figure(figsize=(10,10))
-    ax = fig.add_subplot(111, aspect='equal',
-                             autoscale_on=False)
+    # 为了实验方便，直接读取数据，即可复现实验结果
+    dla.read("DLA.csv")
+    # 画图
+    #dla.plot(size=0.02,label='stickness={}'.format(dla.stickness))
+    
+    #计算分形维数，两种方法，输出结果，并画图
+    dim = dla.hausdorff_dim('sandbox')
+    print("hausdorff dimension by sandbox: ", dim)
 
-    def animate(i):
-        fig.clear()   
-        print("Particle number: ", i+1)
-        ax = fig.add_subplot(111, aspect='equal',
-                             autoscale_on=False)
-        ax.set_xlim(-N//2, N//2), ax.set_xticks([])
-        ax.set_ylim(-N//2, N//2), ax.set_yticks([])
-        ax.set_title('DLA Created by Runze')
-        scat = ax.scatter(datax[:i], datay[:i], s=size,  marker=",", color='white',edgecolors='none',label="stickness = {}".format(dla.stickness))
-        ax.legend()
-        
-    ani = animation.FuncAnimation(fig, animate, interval=30, frames=range(num))
-    ani.save('DLA.gif', writer='pillow')
+    dim = dla.hausdorff_dim('cov_density')
+    print("hausdorff dimension by cov_density: ", dim)

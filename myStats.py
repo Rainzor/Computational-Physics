@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 
-from Schrage_16807 import*
+from hw17.Schrage_16807 import*
 import scipy.special as sc
 from math import factorial
 
