@@ -1,6 +1,6 @@
 # Report13
 
-> PB20020480 王润泽
+> Rainzor
 
 ## 1 Question
 
@@ -89,7 +89,7 @@ $$
 
 ​	利用Metropolis方法对p(x)抽样结果如下所示
 
-<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw13\sample1.png" style="zoom: 20%;" />
+<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw13_Metropolis重要抽样法\sample1.png" style="zoom: 20%;" />
 
 ​	Metropolis方法抽样结果不错
 
@@ -109,7 +109,7 @@ $$
 
 ​		实验中，尝试了 $\alpha=2$, $\beta=3$的取值情况，改变 $\gamma$取值，修改建议分布参数，得到以下曲线
 
-<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw13\rate_error1.png" alt="	" style="zoom: 25%;" />
+<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw13_Metropolis重要抽样法\rate_error1.png" alt="	" style="zoom: 25%;" />
 
 <center> 	图1：&gamma; 与相对误差和接受效率关系
 
@@ -122,7 +122,7 @@ $$
 
 ​	如图2所示
 <center>
-<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw13\px&Tx.png" style="zoom:25%;" />
+<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw13_Metropolis重要抽样法\px&Tx.png" style="zoom:25%;" />
 
 
 <center> 	图2：&alpha;,&beta;与不同&gamma;取值下待抽样分布与建议分布图像
@@ -178,11 +178,11 @@ $$
 依然取 $\alpha=2,\beta=3$，则 $p(x)$图像如下
 
 <center><half>
-	<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw13\px2.png" style="zoom: 15%;" />
-	<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw13\sample2_only.png" style="zoom:15%;" />
+	<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw13_Metropolis重要抽样法\px2.png" style="zoom: 15%;" />
+	<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw13_Metropolis重要抽样法\sample2_only.png" style="zoom:15%;" />
 <center> 	图3：p(x)与抽样图像
 
-<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw13\sample2.png" style="zoom: 25%;" />
+<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw13_Metropolis重要抽样法\sample2.png" style="zoom: 25%;" />
 
 <center> 	图4：p(x)与抽样图像对比	
 
@@ -201,7 +201,7 @@ $$
 
 实验中，尝试了 $\alpha=2$, $\beta=3$的取值情况，改变 $\gamma$取值，修改建议分布参数，得到以下曲线
 
-<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw13\rate_error2.png" style="zoom: 33%;" />
+<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw13_Metropolis重要抽样法\rate_error2.png" style="zoom: 33%;" />
 
 <center> 	图5：&gamma; 与相对误差和接受效率关系
 

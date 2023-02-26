@@ -14,7 +14,7 @@
 
 ​	主要使用迭代法进行计算，对于 $\lambda=0.8$的系统，大致呈现如图1所示的类型，与一维 $Logistic$方法类似
 
-![](F:\MyDocuments\Physics\Computational Physics\Homework\hw16\compare.png)
+![](F:\MyDocuments\Physics\Computational Physics\Homework\hw16_混沌\compare.png)
 <center> 图1：迭代方程形式
 对于有固定周期的态，结果与初始值无关，且在有限步迭代后必然收敛。然而对于混沌的体系，周期无穷，那么最终绘图的结果与初值也无关，不妨取初值为 $x_0=0.5$
 
@@ -36,12 +36,12 @@
 
 ### 3.1 状态变换图
 
-![](F:\MyDocuments\Physics\Computational Physics\Homework\hw16\Bifurcation_diagram.png)
+![](F:\MyDocuments\Physics\Computational Physics\Homework\hw16_混沌\Bifurcation_diagram.png)
 <center> 图2：倍周期分岔到混沌示意图
 
 ​	图 2 是将 $\lambda$ 从 0 变化到 1 所生成出来的一个图像。当 $\lambda$ <0.3 时，迭代序列稳定地收敛到 0。当 $\lambda$ 在 0.3 附近时，短暂地出现了一次倍周期分岔。当0.33 < $\lambda$ < 0.7时，迭代序列收敛到单一值。当 $\lambda$ > 0.7时，迭代序列分别展现出倍周期分岔和混沌的形态。
 
-![](F:\MyDocuments\Physics\Computational Physics\Homework\hw16\Bifurcation_diagram_expend.png)
+![](F:\MyDocuments\Physics\Computational Physics\Homework\hw16_混沌\Bifurcation_diagram_expend.png)
 <center> 图3：局部放大图
 
 ​	将图 2 在0.7 <  $\lambda$< 1的位置放大，得到图 3，从图中可以清晰地看到有 T=2、 T=4、T=8、T=16 的分岔点。
@@ -80,7 +80,7 @@ $$
 $$
 \frac{d_m}{d_{m+1}}\rarr\alpha=2.502 907 875 095 892 822 283 902 87\quad(m\rarr\infin)
 $$
-<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw16\mid.png" style="zoom: 25%;" />
+<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw16_混沌\mid.png" style="zoom: 25%;" />
 <center> 图4：纵向距离交点示意图
 
 ​	对于此题如果取在 $x=0.5$处的值，计算分岔的纵向间距比值，可以看到Feigenbaum $\alpha$是趋于理论值的。
@@ -107,7 +107,7 @@ $$
 
 如果将区间范围调整到 $\lambda\in[-2,2]$范围，可以看到迭代序列出现了负值，这和迭代函数的函数取值是吻合的，同时呈现处一定的对称性
 
-<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw16\Bifurcation_diagram_big_scale.png" style="zoom: 33%;" />
+<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw16_混沌\Bifurcation_diagram_big_scale.png" style="zoom: 33%;" />
 
 <center> 图5：更大范围内状态的变化
 

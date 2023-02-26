@@ -1,6 +1,6 @@
 # Report10
 
-> PB20020480 王润泽
+> Rainzor
 
 ## 1. Question
 
@@ -144,7 +144,7 @@ cond(no)->sub1(right)->op
 
 #### 3.1粒子随机游走图像
 
-<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw10\random_walk.png" style="zoom:50%;" />
+<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw10_随机游走\random_walk.png" style="zoom:50%;" />
 
 <center><p>图1：在强电场中粒子随机游走
 得到如上图像
@@ -162,7 +162,7 @@ C_2(t)=\frac12\left<\bold v(t)\cdot \bold v(0)\right>=\frac12\left<v_x(t)v_x(0)\
 $$
 实验与理论比较得下图
 
-<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw10\covariance_v.png" style="zoom: 50%;" />
+<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw10_随机游走\covariance_v.png" style="zoom: 50%;" />
 
 <center><p>图2：在强电场中，速度相关系数理论与模拟图像
 
@@ -182,9 +182,9 @@ A_{max}=10\\
 B\sin(wt)=\sin(2\pi t)
 $$
 
-<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw10\random_walk2.png" style="zoom:50%;" />
+<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw10_随机游走\random_walk2.png" style="zoom:50%;" />
 
-<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw10\covariance_v2.png" style="zoom:50%;" />
+<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw10_随机游走\covariance_v2.png" style="zoom:50%;" />
 
 
 

@@ -1,8 +1,6 @@
 # Report17
 
-> 姓名：王润泽
->
-> 学号：PB20020480
+> Rainzor
 
 ## 1 Question
 
