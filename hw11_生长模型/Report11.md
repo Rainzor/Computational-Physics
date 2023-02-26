@@ -1,8 +1,6 @@
 # Report11
 
-> 计算物理 作业十一
->
-> PB20020480 王润泽
+> Rainzor
 
 ## 1. Question
 

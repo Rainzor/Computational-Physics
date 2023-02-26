@@ -1,6 +1,6 @@
 # Report8
 
-> PB20020480 王润泽
+> Rainzor
 
 ### 1 Question
 
@@ -8,8 +8,12 @@
 $$
 \begin{aligned}
 I_1 =\int f_1(x)dx =\int_0^5dx\sqrt{x^2+2\sqrt x}\\
-I_2=\int f_2(x,y,z,u,v)dxdydzdudv=\int_0^{7/10}dx\int_0^{4/7}dy\int_0^{9/10}dz\int_0^2du\int_0^{13/11}dv(5+x^2-y^2+3xy-z^2+u^3-v^3)
+
 \end{aligned}
+$$
+
+$$
+I_2=\int f_2(x,y,z,u,v)dxdydzdudv=\int_0^{7/10}dx\int_0^{4/7}dy\int_0^{9/10}dz\int_0^2du\int_0^{13/11}dv(5+x^2-y^2+3xy-z^2+u^3-v^3)
 $$
 
 
@@ -22,7 +26,7 @@ $$
 
 ​	被积函数 $f_1(x)与p(x)$ 如下图所示
 
-<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw08\f1(x).png" style="zoom:67%;" />
+<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw08_MonteCarlo积分法\f1(x).png" style="zoom:67%;" />
 
 <center><p>图1：f(x)与g(x)图像
 
@@ -80,13 +84,13 @@ $$
 
 ​	实验结果如下图所示，可以看到**在N>5000后，有效位有4位**
 
-<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw08\result1.png" style="zoom: 80%;" />
+<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw08_MonteCarlo积分法\result1.png" style="zoom: 80%;" />
 
 <center><p>图3
 
 ​	为了验证积分结果的有效位数精度的变化趋势，有下图
 
-<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw08\error1.png" style="zoom: 80%;" />
+<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw08_MonteCarlo积分法\error1.png" style="zoom: 80%;" />
 
 <center><p>图4：Monte Carlo方法的误差趋势
 
@@ -94,7 +98,7 @@ $$
 
 ​	但同样在实验中会发现，在N较小时，误差会有较大波动性。
 
-<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw08\BadError1.png" style="zoom:80%;" />
+<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw08_MonteCarlo积分法\BadError1.png" style="zoom:80%;" />
 
 <center><p>图5：不稳定的结果
 
@@ -106,13 +110,13 @@ $$
 
 ​	实验结果如下，在**N>20000后，至少有2位的有效位数**
 
-<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw08\result2.png" style="zoom:67%;" />
+<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw08_MonteCarlo积分法\result2.png" style="zoom:67%;" />
 
 <center><p>图6
 
 ​	误差变化趋势如下
 
-<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw08\error2.png" style="zoom:80%;" />
+<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw08_MonteCarlo积分法\error2.png" style="zoom:80%;" />
 
 <center><p>图7
 

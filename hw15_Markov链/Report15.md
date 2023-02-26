@@ -1,5 +1,7 @@
 # Report15
 
+> Rainzor
+
 ## 1 Question
 
 ​	设体系的能量为 $H(x,y) = -2(x^2+y^2)+\frac12(x^4+y^4)+\frac12(x-y)^4$，取$\beta=0.2，1， 5$，采用 Metropolis 抽样法计算$\left< x^2 \right> ,\left< y^2 \right> , \left< x^2 +y^2\right>$。抽样时在 2 维平面 上依次标出 Markov 链点分布，从而形象地理解 Markov 链
@@ -20,7 +22,7 @@ $$
 $$
 ​	从解的结果来看，与 $\beta$ 的取值无关，在固定的点处取到极值，为了使得结果更加形象，不妨取 $\beta = 1$，得到
 
-<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw15\Fxy_beta1.png" style="zoom: 33%;" />
+<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw15_Markov链\Fxy_beta1.png" style="zoom: 33%;" />
 
 <center> 图1：F(x,y)图像
 
@@ -42,7 +44,7 @@ T(x\rarr x',y\rarr y')=T(x',y')=\frac12(G_1(x',y')+G_2(x',y'))
 $$
 则建议分布的图像如下所示<a id="ch2.3"> </a>
 
-<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw15\Txy_beta1.png" style="zoom:33%;" />
+<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw15_Markov链\Txy_beta1.png" style="zoom:33%;" />
 
 <center> 图2：T(x,y)图像
 
@@ -113,14 +115,14 @@ $$
 ​	由**图 3** 可见，分布的极大值处于原点附近，但是原点和离原点较远的地方分布都比较小，抽样结果来看，基本与原分布吻合
 
 <center><half>
-	<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw15\Boltzmann_0.2.png" style="zoom:33%;" />
-	<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw15\sample_0.2.png" style="zoom:30%;" />
+	<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw15_Markov链\Boltzmann_0.2.png" style="zoom:33%;" />
+	<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw15_Markov链\sample_0.2.png" style="zoom:30%;" />
 <center> 图3：高温分布与抽样图像比较
 
 
 ​	根据<a href="#ch2.4">2.4</a> 其热化得到的 Markov Chain如**图4**所示，粒子较为均匀在两个势阱间穿梭<a id="graph4"> </a>
 
-<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw15\burn_points_0.2.png" style="zoom: 33%;" />
+<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw15_Markov链\burn_points_0.2.png" style="zoom: 33%;" />
 
 <center> 图4：高温热化时的Markov Chain 
 
@@ -137,12 +139,12 @@ $$
 ​	对应的图像对比与Markov Chain如**图5，6**所示
 
 <center><half>
-	<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw15\Boltzmann_1.png" style="zoom:33%;" />
-	<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw15\sample_1.png" style="zoom:27%;" />
+	<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw15_Markov链\Boltzmann_1.png" style="zoom:33%;" />
+	<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw15_Markov链\sample_1.png" style="zoom:27%;" />
 <center> 图5：中等温度分布与抽样图像比较
 
 
-<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw15\burn_points_1.png" style="zoom: 33%;" />
+<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw15_Markov链\burn_points_1.png" style="zoom: 33%;" />
 
 <center> 图6：中等温度热化时的Markov Chain 
 
@@ -158,15 +160,15 @@ $$
 
 ​	对应的分布与抽样图像对比如**图7**所示
 <center><half>
-	<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw15\Boltzmann_5.png" style="zoom:33%;" />
-	<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw15\sample_5.png" style="zoom:27%;" />
+	<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw15_Markov链\Boltzmann_5.png" style="zoom:33%;" />
+	<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw15_Markov链\sample_5.png" style="zoom:27%;" />
 <center> 图7：低温分布与抽样图像比较
 
 ​	为比较<a href="#ch2.3">2.3</a>与<a href="#ch2.4">2.4</a>提出的算法，取在 $\beta=5$时比较更为形象，因为此时在极值点处是势阱很深，如**图7**所示，粒子基本只在极值点附近，而极少的有“隧穿”过程，比较结果如下所示
 
 <center><half>
-	<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw15\burn_points_5.png" style="zoom:33%;" />
-	<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw15\mcmc_5.png" style="zoom:33%;" />
+	<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw15_Markov链\burn_points_5.png" style="zoom:33%;" />
+	<img src="F:\MyDocuments\Physics\Computational Physics\Homework\hw15_Markov链\mcmc_5.png" style="zoom:33%;" />
 <center> 图8：低温热化与抽样时的Markov Chain 对比
 
 ​	当采取<a href="#ch2.4">2.4</a>中的算法，如**图8左**所示，在从（5，5）出发的点，当靠近极值点后，基本活动范围只在第一象限内的势阱中，几乎不可能到另一边的势阱，这与<a href="#graph4">图4</a>展现的 $\beta$ 较小（高温）时热化的Markov Chain很不一样。
