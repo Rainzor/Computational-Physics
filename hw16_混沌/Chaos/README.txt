@@ -7,4 +7,3 @@ data.csv 是最原始的lambda与相应状态x的取值，方便画散点图
 Feigenbaum_size.csv 保存的是不同lambda与对应的周期数
 Feigenbaum_alpha.csv 保存了在x=0.5附近时，lambda取值
 
-Python生成可执行文件较大，请助教直接运行脚本程序

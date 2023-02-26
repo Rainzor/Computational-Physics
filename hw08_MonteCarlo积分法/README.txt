@@ -8,5 +8,4 @@
 
 代码中定义了”simple_monte_carlo_int“、”weight_monte_carlo_int“和”monte_carlo_iint“函数，用来计算数值积分
 
-由于py不好生成可执行程序，故请助教直接调用代码，运行程序
 主要用到numpy、time、pandas、matplotlib、scipy包
