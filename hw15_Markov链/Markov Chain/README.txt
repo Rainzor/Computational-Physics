@@ -15,4 +15,3 @@ data_beta_0.2.csv,data_beta_1.csv,data_beta_1.csv 分别是beta取不同值时�
 
 burn_beta_1.csv 是在 beta = 1下利用简单Metropolis方法抽样得到的Markov Chain轨迹坐标值
 
-Python生成可执行文件较大，请助教直接运行脚本程序
