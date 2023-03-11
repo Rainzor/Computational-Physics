@@ -1,7 +1,6 @@
 # Report
 
-> PB20020480  王润泽
->
+> Rainzor
 
 ## 1 Question
 
@@ -15,7 +14,12 @@
 $$
 H=−J\sum_{\left<i,j\right>}{\sigma_i\sigma_j}
 $$
-​	对于一维Ising模型没有相变解，而二维时存在相变。
+​	其精确解是：
+$$
+\frac{M}{M_{\infin}}=\frac{\sinh I}{\sqrt{\sinh^2I+e^{-4K}}}\\
+$$
+
+其中$I=\frac{\mu_BH}{k_BT},K=\frac{J}{k_BT}$, 在去掉外磁场的情况下，H=0，$M/M_{\infin}=0$，即除了T = 0点外无自发磁化，没有有序化相变。所以对于一维Ising模型没有相变解，而二维时存在相变。
 
 ### 2.2 二维XY模型
 
@@ -28,8 +32,8 @@ $$
 ​	这个模型存在一个连续的相变，当温度低于某个临界温度时，系统的自旋将具有长程有序性。尽管系统的平均磁化强度为零，但系统可以存在一种亚稳态，自旋的排列形成涡旋。在相变温度以上，涡旋是自由的。在相变温度之下，自旋涡旋是成对出现 的，并且对于$T < T_{KT}$ 的所有温度系统都和 $T=T_{KT}$ 时一样，因此临界点实际上是临界线。XY模型模拟结果如下：
 
 <center class="half">
-<img src="F:\MyDocuments\Physics\Computational Physics\Homework\BigHomework\XY_model\T_0.1.png" style="zoom:30%;" />
-<img src="F:\MyDocuments\Physics\Computational Physics\Homework\BigHomework\XY_model\xy_Cv.png" style="zoom:40%;" />
+<img src=".\XY_model\T_0.1.png" style="zoom:20%;" />
+<img src=".\XY_model\xy_Cv.png" style="zoom:30%;" />
 <center><p>图1 左：稳定下XY模型旋度；右：热容随温度变化曲线
 
 <div STYLE="page-break-after: always;"></div>
@@ -58,7 +62,7 @@ $$
 
 ​	模型一，主要构建的是如下类型的相互作用体系
 
-![](F:\MyDocuments\Physics\Computational Physics\Homework\BigHomework\model1\model.png)
+![](.\model1\model.png)
 
 <center>图2 模型一	
 
@@ -70,18 +74,19 @@ $$
 
 ​	根据上述模型，设 $\mu_B=1，J_1=J_2=J_3=1,k_B=1$ 得到以下结果
 
-​	![](F:\MyDocuments\Physics\Computational Physics\Homework\BigHomework\model1\output.png)
+​	![](.\model1\output.png)
 
 <center>图3：模型一的能量，磁场，热容随温度变化图像
-​	其中比热的临界温度大致在 $(1.1,1.2)$范围内，这与XY模型的临界温度接近，可以认为这类模型中XY模型由于粒子数众多，占据了主导作用，导致最终相变点任然由XY模型决定。
+​	
 
+其中比热的临界温度大致在 $(1.1,1.2)$范围内，这与XY模型的临界温度接近，可以认为这类模型中XY模型由于粒子数众多，占据了主导作用，导致最终相变点任然由XY模型决定。
 
 
 ### 3.2 模型二
 
 ​	模型二，主要构建的是如下类型的相互作用体系
 
-<img src="F:\MyDocuments\Physics\Computational Physics\Homework\BigHomework\model2\model2.png" style="zoom:67%;" />
+<img src=".\model2\model2.png" style="zoom:67%;" />
 
 <center>图4:模型二	
 
@@ -94,17 +99,20 @@ $$
 
 ​	根据上述模型得到以下结果
 
-![](F:\MyDocuments\Physics\Computational Physics\Homework\BigHomework\model2\output.png)
+![](.\model2\output.png)
 
 <center>图5：模型二能量,热容随温度变化图像
 
 ​	热容的相变点依然和XY模型一致.但涡旋图像发生改变，如下图:
 
 <center class="half">
-<img src="F:\MyDocuments\Physics\Computational Physics\Homework\BigHomework\model2\T_0.01.png" style="zoom:67%;" />
-<img src="F:\MyDocuments\Physics\Computational Physics\Homework\BigHomework\XY_model\T_0.01_XY.png" style="zoom: 67%;" />
+<img src=".\model2\T_0.01.png" style="zoom:67%;" />
+<img src=".\XY_model\T_0.01_XY.png" style="zoom: 67%;" />
 <center> 图6：左：模型二极速冷却后旋度图；右：XY模型极速冷却后旋度图
+​	
+
 ​	由于XY模型与一维Ising模型的相互作用，在低温下，Ising模型不再只朝一个方向。同时与XY模型在相同温度下对比可以看到，模型二有更多的的涡旋数目。
+
 
 <div STYLE="page-break-after: always;"></div>
 
@@ -113,8 +121,8 @@ $$
 ​	模型三，主要构建的是如下类型的相互作用体系
 
 <center class="half">
-<img src="F:\MyDocuments\Physics\Computational Physics\Homework\BigHomework\model3\model3_cube.png"" style="zoom:70%;" />
-<img src="F:\MyDocuments\Physics\Computational Physics\Homework\BigHomework\model3\model3_plane.png"" style="zoom:70%;" />
+<img src=".\model3\model3_cube.png"" style="zoom:70%;" />
+<img src=".\model3\model3_plane.png"" style="zoom:70%;" />
 <center><p>图7 左：模型三的3维图像；右：模型三的2维平面图
 
 ​	该模型是在XY模型的基础上，为平面上的粒子增加了Z轴的维度，使得其不仅可以在平面转动，还可以上下翻转，这更加接近电子自旋的实际状态。在该模型中，粒子自旋方向实际上是与Z轴呈 $\pi/4$ 或 $3\pi/4$的旋转的，二维平面图更加直观描述了该模型的样子。该模型实际上属于是二维Ising模型与XY模型的结合。
@@ -125,9 +133,11 @@ H=−\frac J{\sqrt2}\sum_{\left<i,j\right>}[{\cos(\theta_i−\theta_j)}+\sigma_i
 $$
 ​	根据上述模型得到以下结果：
 
-![](F:\MyDocuments\Physics\Computational Physics\Homework\BigHomework\model3\output.png)
+![](.\model3\output.png)
 
 <center>图9：模型三的能量，磁场，热容随温度变化图像
+​	
+
 ​	从该热容随温度变化的图像可以看到，存在着两个尖峰，分别是XY模型相变的临界点 $T_1$ ，和二维Ising模型的临界点 $T_2$ 。从磁场变化看出，在 $T_2$临界点处，磁场变化最明显，可以认为是相变的温度。
 
 <div STYLE="page-break-after: always;"></div>
@@ -135,12 +145,12 @@ $$
 ​	从旋度图可以对比一下温度变化的过程：
 
 <center class="half">
-    <img src="F:\MyDocuments\Physics\Computational Physics\Homework\BigHomework\model3\T_0.010_model3.png"width=250/>
-    <img src="F:\MyDocuments\Physics\Computational Physics\Homework\BigHomework\model3\T_1.100_model3.png"width=250/>
+    <img src=".\model3\T_0.010_model3.png"width=250/>
+    <img src=".\model3\T_1.100_model3.png"width=250/>
 </center>
 <center class="half">
-    <img src="F:\MyDocuments\Physics\Computational Physics\Homework\BigHomework\model3\T_2.300_model3.png" width=250/>
-    <img src="F:\MyDocuments\Physics\Computational Physics\Homework\BigHomework\model3\T_4.000_model3.png" width=250/>
+    <img src=".\model3\T_2.300_model3.png" width=250/>
+    <img src=".\model3\T_4.000_model3.png" width=250/>
 </center>
 <center><p>图10 模型三中不同温度下旋度的对比
 
