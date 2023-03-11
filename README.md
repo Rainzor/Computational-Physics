@@ -1,4 +1,9 @@
-## This is Computational Physics Programs in fall 2022 in USTC
+# README
+
+> This is Computational-Physics-A Course Programs in fall 2022 in USTC 
+>
+> Author: Rainzor
+
 Mainly having some assignments and lecture notes
 
 ### Hw1_16807_Random_Numbers_Generator
