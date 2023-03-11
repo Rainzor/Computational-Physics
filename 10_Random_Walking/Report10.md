@@ -130,8 +130,6 @@ sub1=>subroutine: 产生随机力
 io=>inputoutput: 计算速度关联函数
 
 plt=>operation: 画图
-
-e=>end: 结束
  
 st->op->cond
  
@@ -144,7 +142,7 @@ cond(no)->sub1(right)->op
 
 #### 3.1粒子随机游走图像
 
-<img src=".\img\random_walk.png" style="zoom:50%;" />
+<img src=".\img\random_walk.png" style="zoom:40%;" />
 
 <center><p>图1：在强电场中粒子随机游走
 得到如上图像
@@ -162,7 +160,7 @@ C_2(t)=\frac12\left<\bold v(t)\cdot \bold v(0)\right>=\frac12\left<v_x(t)v_x(0)\
 $$
 实验与理论比较得下图
 
-<img src=".\img\covariance_v.png" style="zoom: 50%;" />
+<img src=".\img\covariance_v.png" style="zoom: 40%;" />
 
 <center><p>图2：在强电场中，速度相关系数理论与模拟图像
 
@@ -182,12 +180,9 @@ A_{max}=10\\
 B\sin(wt)=\sin(2\pi t)
 $$
 
-<img src=".\img\random_walk2.png" style="zoom:50%;" />
+<img src=".\img\random_walk2.png" style="zoom:40%;" />
 
-<img src=".\img\covariance_v2.png" style="zoom:50%;" />
-
-
-
+<img src=".\img\covariance_v2.png" style="zoom:40%;" />
 
 
 ​	由图像可见，当加大随机力后，图像更加接近随机游走，局部有微小的振动；而由于粘滞阻力的作用，粒子相关系数仍然会逐渐收敛到0，但由于实验模拟精度有限，右图像末端会有一些涨落，但整体趋势仍然符合理论。
