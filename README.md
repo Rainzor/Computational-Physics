@@ -6,7 +6,7 @@
 
 Mainly having some assignments and lecture notes
 
-### Hw1_16807_Random_Numbers_Generator
+### [Hw1_16807_Random_Numbers_Generator](./01_16807_RandNumGenerator)
 
 Create a random numbers generator by 16807 Method
 
