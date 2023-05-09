@@ -12,11 +12,11 @@ Create a random numbers generator by 16807 Method
 
 Test 16807 generation's Uniformity and Independence
 
-### Hw2_Lagged_Fibonacci_Generator
+### [Hw2_Lagged_Fibonacci_Generator](./02_Lagged_Fibonacci_Generator)
 
 Compare the 16807 generator  and Lagged Fibonacci generator
 
-### Hw3_Evenly_Distributed_Spherical
+### [Hw3_Evenly_Distributed_Spherical](./03_Evenly_Distributed_Spherical)
 
 Sampling  uniform distribution on the hemisphere
 
