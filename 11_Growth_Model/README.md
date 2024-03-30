@@ -1,5 +1,7 @@
 # README
 
+More details about the Growth Model you can see in the following link:[GrowthModel](https://github.com/Rainzor/GrowthModel)
+
 ## Code
 
 主程序在“DLA.py”，“DBM.py”，“DBM_FAST.py”中

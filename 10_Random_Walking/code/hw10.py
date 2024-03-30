@@ -105,7 +105,7 @@ if __name__=="__main__":
 
     # #保存数据
     # df = pd.DataFrame({'x':x[:,0],'y':x[:,1]})
-    # df.to_csv('Brown.csv',index=False)
+    # df.to_csv('../data/Brown.csv',index=False)
 
     #计算相关函数
     #迭代n次，计算平均值
@@ -121,7 +121,7 @@ if __name__=="__main__":
 
     # #保存数据
     # df = pd.DataFrame({'t':t,'cov_v_theory':cov_v_theory,'cov_v_sim':cov_v_sim})
-    # df.to_csv('cov_velocity.csv',index=False)
+    # df.to_csv('../data/cov_velocity.csv',index=False)
 
     plt.figure()
 

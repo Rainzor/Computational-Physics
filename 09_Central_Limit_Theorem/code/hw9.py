@@ -1,4 +1,4 @@
-from myStats import norm,binom,expon,poisson,uniform,Cos
+from DistributionGenerator import norm,binom,expon,poisson,uniform,Cos
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd

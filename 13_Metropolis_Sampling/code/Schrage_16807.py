@@ -33,7 +33,7 @@ class Schrage16807(object):
             l = np.zeros(dim)
             for i in range(dim):
                 i_n=self.__iter_rand(i_n)
-                l[i] = i_n;
+                l[i] = i_n
             self.__seed = i_n
             return l/self.__M        
 
