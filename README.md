@@ -59,7 +59,7 @@ Verifying the Central Limit Theorem using Poisson Distribution，Binomial distri
 
 ### [Hw10_Random_Walking](./10_Random_Walking)
 
-Using Monte Carlo method studies the random walk of charged particles in a sinusoidal external electric field $( sin\omega t )$ on a two-dimensional plane. 
+Using Monte Carlo method studies the random walk of charged particles in a sinusoidal external electric field (sin(wt)) on a two-dimensional plane. 
 
 Derive the expression for the velocity autocorrelation function
 
