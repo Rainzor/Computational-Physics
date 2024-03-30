@@ -16,7 +16,7 @@ For methods of generating random numbers with more distributions, please see [Di
 
 更多的分布随机数产生方法可以查看 [DistributionGenerator.py](./DistributionGenerator.py)
 
-**If this repository is helpful to you, please give me a star.:grinning:**
+**If this repository is helpful to you, please give me a star.**  :grinning:
 
 ### [Hw1_16807_Random_Numbers_Generator](./01_16807_RandNumGenerator)
 
