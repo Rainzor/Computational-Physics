@@ -37,7 +37,7 @@ Sampling  uniform distribution on the hemisphere
 
 Using selection method sampling of a given function
 
-### [Hw5_ Marsaglia_Sampling](./05_Marsaglia_Sampling)
+### [Hw5_Marsaglia_Sampling](./05_Marsaglia_Sampling)
 
 Marsaglia sampling method which is used to sampling cos and sin function as usual
 
