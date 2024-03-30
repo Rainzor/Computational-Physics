@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 
 from RandNumGenerator import*
-# import scipy.special as sc
+import scipy.special as sc
 from math import factorial
 
 class rv_generi(ABC):
@@ -240,30 +240,24 @@ class norm(rv_continuous):
 
     def pdf(self,x):
         return np.exp(-x**2/(2*self.var**2))/np.sqrt(2*np.pi*self.var)
-    
-    # def ndtr(self,x):
-    #     #误差公式
-    #     return sc.ndtr(x)
 
-    # def cdf(self, x):  
-    #     return self.ndtr((x-self.mean)/self.std)
+    def cdf(self, x):  
+        return self.ndtr((x-self.mean)/self.std)
 
-    # def ndtri(self,p):
-    #     return sc.ndtri(p)
+    def ndtri(self,p):
+        return sc.ndtri(p)
 
-    def cdf(self, x):
-        pass
     def ppf(self, p):
         pass
-    #     #直接使用了库中的反函数erfinv
-    #     if 0 < p and p < 1:
-    #         return self.ndtri(p)*self.std+self.mean
-    #     elif p == 0:
-    #         return -np.inf
-    #     elif p == 1:
-    #         return np.inf
-    #     else:
-    #         raise ValueError("p is out of range")
+        #直接使用了库中的反函数erfinv
+        if 0 < p and p < 1:
+            return self.ndtri(p)*self.std+self.mean
+        elif p == 0:
+            return -np.inf
+        elif p == 1:
+            return np.inf
+        else:
+            raise ValueError("p is out of range")
     
 class expon(rv_continuous):
     """An exponential continuous random variable.
@@ -400,7 +394,7 @@ class poisson(rv_discrete):
                     return k
             return np.ceil(2*self._lambda)
         else:#当lambda足够大时，泊松分布趋近于正态分布s
-            # return np.floor(norm.ndtri(p)*self._lambda+self._lambda) #反函数误差函数erfinv
+            return np.floor(norm.ndtri(p)*self._lambda+self._lambda) #反函数误差函数erfinv
             pass
         
     @property
@@ -512,11 +506,6 @@ class binom(rv_discrete):
                 t = self.__data[-1]+self.pmf(i)
                 self.__data.append(t)
                 i = i+1
-
-    
-
-            
-
     def rvs(self, size=1):
         if size ==1:
             xi = self.seed.rand(size)
@@ -548,9 +537,7 @@ class binom(rv_discrete):
         if len(self.__data) > 0 :
             return super()._binary_search(p, 0, self._n+1, self.__data)
         else:
-            # return norm.ndtri(p)*self.std+self.mean
-            pass
-
+            return norm.ndtri(p)*self.std+self.mean
 class Cos(rv_continuous):
     """Cos function from -pi/2 to pi/2
 
