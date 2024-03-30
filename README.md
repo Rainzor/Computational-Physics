@@ -23,7 +23,7 @@ For methods of generating random numbers with more distributions, please see [Di
 
 Create a random numbers generator by 16807 Method
 
-Test 16807 generation's Uniformity and Independence
+Test 16807 generation's uniformity and independence
 
 ### [Hw2_Lagged_Fibonacci_Generator](./02_Lagged_Fibonacci_Generator)
 
@@ -77,7 +77,10 @@ Compute the integral using Metropolis-Hasting sampling
 
 ### [Hw14_Ising_Model](./14_Ising_Model)
 
-A question about Ising model
+A question about Ising model.
+
+Experiment about the phase transition between one-dimensional Ising model and two-dimensional XY model system.
+
 
 ### [Hw15_Markov_Chain](./15_Markov_Chain)
 
@@ -91,9 +94,6 @@ Finding Chaos from Newton's Iterative Equation
 
 Analysis of Fractal and Fractal Dimension Features from DLA Model
 
-### [Big Homework](./Big_Homework)
-
-Study the phase transition between one-dimensional Ising model and two-dimensional XY model system
 
 ### [Note](./Note)
 
