@@ -67,7 +67,7 @@ Derive the expression for the velocity autocorrelation function
 
 Simulate 2D DLA and Dielectric Breakdown (DBM) patterns and discuss their growth patterns
 
-### [Hw12_Percolation Model](./12_Percolation_Model)
+### [Hw12_Percolation_Model](./12_Percolation_Model)
 
 Derivation of Renormalized Group Transform Expressions, Critical Points and Critical Exponents for Bond Percolation on Square Lattice Lattice
 
