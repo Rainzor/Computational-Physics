@@ -60,47 +60,8 @@ class Schrage16807(object):
                         return a.reshape((d0, d1))  # 返回d0*d1的随机数矩阵
         return print("Error, please input a positive integer!\n")
 
-<<<<<<< HEAD
     def __normal(self, size):
         """生成服从正态分布的随机数
-=======
-    def __normal(self,size):
-        """生成服从正态分布的随机数
-
-        Parameters
-        ----------
-        loc : float
-            正态分布的均值
-        scale : float
-            正态分布的标准差
-        size : int or tuple of ints
-            随机数的个数
-        """
-        i = 0
-        tmp = np.zeros(size).flatten() 
-        l = len(tmp)
-            
-        while i < l:
-            u = self.__rand_list(1)*2-1
-            v = self.__rand_list(1)*2-1
-            r = np.sqrt(u**2+v**2)
-            if r >= 1:
-                continue    
-            else:
-                tmp[i] = (u/r)*np.sqrt(-4*np.log(r))
-                if i+1 < l:
-                    tmp[i+1] =(v/r)*np.sqrt(-4*np.log(r))
-                i += 2
-                # print((u/r)*np.sqrt(-4*np.log(r)), (v/r)*np.sqrt(-4*np.log(r)))
-        return tmp.reshape(size)
-        
-    def normal(self, size=None,loc=0, scale=1):
-        if size is None:
-            return self.__normal(1)*scale+loc
-        else :
-            return self.__normal(size)*scale+loc
->>>>>>> 3fb25b3f97dc583ab23e02be41e5d3459f885ece
-
         Parameters
         ----------
         loc : float
