@@ -4,6 +4,8 @@
 >
 > Author: Rainzor
 
+**If this repository is helpful to you, please give me a star.**  :grinning:
+
 Mainly having some assignments and lecture notes.
 
 [RandomNumGenerator.py](./RandNumGenerator.py) is a random number generator based on 16807 method. This random number generator is continuously improving as the tasks progress. It can generate random numbers with a uniform distribution in [0,1], create random number matrices of specified sizes, and generate normally distributed random numbers. 
@@ -16,7 +18,6 @@ For methods of generating random numbers with more distributions, please see [Di
 
 更多的分布随机数产生方法可以查看 [DistributionGenerator.py](./DistributionGenerator.py)
 
-**If this repository is helpful to you, please give me a star.**  :grinning:
 
 ### [Hw1_16807_Random_Numbers_Generator](./01_16807_RandNumGenerator)
 
