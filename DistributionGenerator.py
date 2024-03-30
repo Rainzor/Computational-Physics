@@ -221,7 +221,7 @@ class norm(rv_continuous):
 
 
     def rvs(self, size=1):
-        #Box-Muller法抽样
+        #Box-Muller Method
         i = 0
         output = np.zeros(size)
         while i < size:
@@ -248,7 +248,6 @@ class norm(rv_continuous):
         return sc.ndtri(p)
 
     def ppf(self, p):
-        pass
         #直接使用了库中的反函数erfinv
         if 0 < p and p < 1:
             return self.ndtri(p)*self.std+self.mean
@@ -393,9 +392,8 @@ class poisson(rv_discrete):
                 if c>p:
                     return k
             return np.ceil(2*self._lambda)
-        else:#当lambda足够大时，泊松分布趋近于正态分布s
+        else: # When lambda is large, we use the normal approximation
             return np.floor(norm.ndtri(p)*self._lambda+self._lambda) #反函数误差函数erfinv
-            pass
         
     @property
     def lambdaa(self):
