@@ -5,7 +5,7 @@
 ​用 Metropolis-Hasting 抽样方法计算积分：
 
 $$
-I=\int_0^{\infin}(x-\alpha \beta)^2f(x)dx=\alpha \beta^2
+I=\int_0^{\infty}(x-\alpha \beta)^2f(x)dx=\alpha \beta^2
 $$
 
 ​其中 $f(x)=\frac1{\beta\Gamma(\alpha)}(\frac x \beta)^{\alpha-1}\exp(-x/\beta)$  。
