@@ -1,5 +1,7 @@
 # README
 
+模拟2维DLA以及介电击穿（DBM）图案并讨论
+
 More details about the Growth Model you can see in the following link:[GrowthModel](https://github.com/Rainzor/GrowthModel)
 
 ## Code

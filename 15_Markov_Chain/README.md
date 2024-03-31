@@ -1,5 +1,17 @@
 # README
 
+## Question
+
+设体系的能量为 
+
+$$
+H(x,y) = -2(x^2+y^2)+\frac12(x^4+y^4)+\frac12(x-y)^4
+$$
+
+取 $\beta=1/kT=0.2, 1, 5$
+
+采用 Metropolis 抽样法计算 $\left< x^2 \right> ,\left< y^2 \right> , \left< x^2 +y^2\right>$ 。抽样时在 2 维平面上依次标出 Markov 链点分布，从而形象地理解 Markov 链。
+
 ## Code
 
 主程序在“hw15.py”中

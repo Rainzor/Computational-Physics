@@ -1,8 +1,12 @@
 # README
 
+## Question
+
+考虑泊松分布、指数分布，并再自设若干个随机分布（它们有相同或不同的 $\mu$ 和 $\sigma^2$ ，通过 Monte Carlo 模拟，验证中心极限定理成立 $(N=2、5、10)$ 
+
 ## code
 
-主程序在“hw9.py”中
+主程序在 "hw9.py" 中
 
 ## data
 
@@ -11,7 +15,7 @@ data中提供了测试集数据“data_09_2.csv”,“data_09_5.csv”,“data_0
 
 代码中没有直接调用，而是采取“时间-种子”方式，现场形成随机数，也可以直接调用程序即可画图
 
-## 代码说明
+## Explanation
 
 主要用到numpy、time、pandas、matplotlib、abc、math包
 
