@@ -1,9 +1,15 @@
 # README
 
+## Question
+
+进行单中心DLA模型的模拟(可以用圆形边界，也可 以用正方形边界)，并用两种方法计算模拟得到的DLA图形的分形维数，求分形维数时需要作出双对数图
+
 ## Code
 
 主程序在“DLA.py”中
-DLA.py: 含有 Growth_Model抽象类，DLA类继承了Growth_Model类
+
+DLA.py: 含有 `Growth_Model` 抽象类，DLA类继承了Growth_Model类
+
 主要用到numpy、time、pandas、matplotlib包
 
 ## Data

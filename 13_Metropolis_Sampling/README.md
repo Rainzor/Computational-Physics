@@ -1,5 +1,18 @@
 # README
 
+## Question
+
+​用 Metropolis-Hasting 抽样方法计算积分：
+
+$$
+I=\int_0^{\infin}(x-\alpha \beta)^2f(x)dx=\alpha \beta^2
+$$
+
+​其中 $f(x)=\frac1{\beta\Gamma(\alpha)}(\frac x \beta)^{\alpha-1}\exp(-x/\beta)$  。
+
+设权重函数为： $p(x)=f(x)$和 $p(x)=(x-\alpha \beta)^2f(x)$ 。给定参数 $\alpha,\beta$ 用不同的 $\gamma$ 值计算积分，讨论计算精度和效率。
+
+
 ## Code
 
 主程序在“code/Metroplis.py”中
