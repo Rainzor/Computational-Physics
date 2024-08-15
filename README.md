@@ -3,6 +3,8 @@
 > This is Computational-Physics-A Course Programs in fall 2022 in USTC 
 >
 > Author: Rainzor
+>
+> Code：Python
 
 **If this repository is helpful to you, please give me a star.**  :grinning:
 
